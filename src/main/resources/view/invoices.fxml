@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" prefHeight="400.0" prefWidth="748.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.InvoicesController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="590.0" spacing="5.0">
+            <children>
+                <Label styleClass="fw-500" text="Patient Type"/>
+                <ChoiceBox fx:id="patientCategoryChoiceBox" layoutX="190.0" layoutY="22.0" minWidth="150.0"/>
+                <Label styleClass="fw-500" text="Insurance Co.">
+                    <HBox.margin>
+                        <Insets left="10.0"/>
+                    </HBox.margin>
+                </Label>
+                <ChoiceBox fx:id="insuranceChoiceBox" minWidth="150.0"/>
+                <Button onAction="#onGroupInvoices" fx:id="aggregateInvoicesBtn" mnemonicParsing="false"
+                        styleClass="btn-info-outline" text="Aggregate Invoices" visible="false"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label styleClass="fw-500" text="Patient"/>
+                <TextField fx:id="searchField"/>
+            </children>
+            <styleClass>
+                <String fx:value="border-light-3"/>
+                <String fx:value="container-padded"/>
+            </styleClass>
+        </HBox>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="billNo" prefWidth="75.0" text="Bill No."/>
+                <TableColumn fx:id="patientNum" prefWidth="75.0" text="Patient No."/>
+                <TableColumn fx:id="patientName" prefWidth="75.0" text="Patient Name"/>
+                <TableColumn fx:id="insurance" prefWidth="75.0" text="Insurance Co."/>
+                <TableColumn fx:id="amountPaid" prefWidth="75.0" text="Amount Paid"/>
+                <TableColumn fx:id="outstanding" prefWidth="75.0" text="Outstanding"/>
+                <TableColumn fx:id="options" prefWidth="75.0" text="Options"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</VBox>

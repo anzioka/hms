@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="530.0" prefWidth="700.0"
+      spacing="5.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.EditStockTakeController">
+    <styleClass>
+        <String fx:value="scene"/>
+    </styleClass>
+    <children>
+        <Label text="Stock Take">
+            <font>
+                <Font size="1.0"/>
+            </font>
+            <styleClass>
+                <String fx:value="h6"/>
+                <String fx:value="modal-title"/>
+            </styleClass>
+        </Label>
+        <VBox fx:id="container" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0"
+              VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="591.0" spacing="5.0">
+                    <children>
+                        <Label text="Location">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-4"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="medicineLocationChoiceBox" prefWidth="150.0"/>
+                        <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                        <Label layoutX="10.0" layoutY="21.0" text="Medicine">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-4"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="searchField"/>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+                <TableView fx:id="tableView" editable="true" prefHeight="315.0" prefWidth="591.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="drugId" prefWidth="75.0" text="Code"/>
+                        <TableColumn fx:id="name" prefWidth="75.0" text="Name"/>
+                        <TableColumn fx:id="sellingPrice" prefWidth="75.0" text="Selling Price"/>
+                        <TableColumn fx:id="qtyAtHand" prefWidth="75.0" text="System Count"/>
+                        <TableColumn fx:id="physicalCount" prefWidth="75.0" text="Physical Count"/>
+                        <TableColumn fx:id="quantityChange" prefWidth="75.0" text="Qty Change"/>
+                        <TableColumn fx:id="valueChange" prefWidth="75.0" text="Value Change"/>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="591.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onExit" styleClass="btn-warning" text="Exit"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                        <Button mnemonicParsing="false" onAction="#onSave" styleClass="btn-success" text="Save"/>
+                    </children>
+                    <styleClass>
+                    </styleClass>
+                </HBox>
+            </children>
+            <styleClass>bg-white</styleClass>
+        </VBox>
+    </children>
+</VBox>

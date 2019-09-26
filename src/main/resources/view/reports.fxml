@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="577.0" prefWidth="861.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.ReportsController">
+    <children>
+        <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0"
+              spacing="10.0" styleClass="bg-lighten3">
+            <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/reports.png"/>
+                    </image>
+                </ImageView>
+                <Label text="Reports">
+                    <styleClass>
+                        <String fx:value="color-accent"/>
+                        <String fx:value="h4"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <FlowPane fx:id="buttonPanel" alignment="CENTER" hgap="20.0" minHeight="45.0" prefWidth="851.0"
+                  style="-fx-background-color: white;" styleClass="border-light-3" vgap="10.0">
+            <children>
+                <Button id="cash_collection_reports" mnemonicParsing="false" text="Daily Cash Collection"/>
+                <Button id="insurance_payment_reports" mnemonicParsing="false" text="Insurance Payments"/>
+                <Button id="patient_visit_reports" mnemonicParsing="false" text="Patient Visits"/>
+                <Button id="lab_reports" mnemonicParsing="false" text="Laboratory"/>
+                <Button id="pharmacy_reports" mnemonicParsing="false" text="Pharmacy"/>
+                <Button id="ward_occupancy_reports" mnemonicParsing="false" text="Ward Occupancy"/>
+            </children>
+        </FlowPane>
+    </children>
+</VBox>

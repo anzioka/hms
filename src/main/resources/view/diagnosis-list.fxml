@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="602.0" spacing="3.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.DiagnosisListController">
+   <children>
+      <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="30.0" prefWidth="505.0" spacing="5.0">
+         <children>
+            <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#uploadList" styleClass="btn-info" text="Upload List" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label styleClass="h7" text="Search" />
+            <TextField fx:id="searchField" promptText="disease name" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <TableView fx:id="tableView" VBox.vgrow="SOMETIMES">
+         <columns>
+            <TableColumn fx:id="code" prefWidth="117.0" text="ICD-10 Code" />
+            <TableColumn fx:id="name" prefWidth="572.0" text="Name" />
+         </columns>
+      </TableView>
+   </children>
+   <styleClass>
+      <String fx:value="container-padded" />
+      <String fx:value="scene" />
+   </styleClass>
+</VBox>

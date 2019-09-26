@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" prefHeight="481.0" prefWidth="844.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.InsurancePaymentRecordsController">
+    <children>
+        <HBox alignment="CENTER" layoutX="15.0" layoutY="15.0" prefHeight="40.0" prefWidth="590.0" spacing="5.0">
+            <children>
+                <Label text="Start Date">
+                    <styleClass>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-unique"/>
+                    </styleClass>
+                </Label>
+                <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy"/>
+                <Label text="End Date">
+                    <padding>
+                        <Insets left="20.0"/>
+                    </padding>
+                    <styleClass>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-unique"/>
+                    </styleClass>
+                </Label>
+                <DatePicker fx:id="endDate" layoutX="591.0" layoutY="17.0" prefWidth="153.0" promptText="dd-mm-yyyy"/>
+                <Button mnemonicParsing="false" onAction="#onSearch" styleClass="btn-info-outline" text="Search"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label text="Search">
+                    <styleClass>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-unique"/>
+                    </styleClass>
+                </Label>
+                <TextField fx:id="searchField" promptText="patient name"/>
+            </children>
+            <styleClass>
+                <String fx:value="border-light-4"/>
+                <String fx:value="container-padded"/>
+            </styleClass>
+        </HBox>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="receiptNo" prefWidth="75.0" text="Invoice No."/>
+                <TableColumn fx:id="patientName" prefWidth="75.0" text="Patient Name"/>
+                <TableColumn fx:id="amount" prefWidth="75.0" text="Amount Paid"/>
+                <TableColumn prefWidth="75.0" text="Insurance Co."/>
+                <TableColumn fx:id="paymentMode" prefWidth="75.0" text="Payment Mode"/>
+                <TableColumn fx:id="options" prefWidth="75.0" text="Options"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</VBox>

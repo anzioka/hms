@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="container" prefHeight="443.0" prefWidth="981.0" styleClass="scene"
+            stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+            fx:controller="main.java.controller.AdmissionHistoryController">
+    <children>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0"
+              prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefWidth="850.0" spacing="5.0">
+                    <children>
+                        <Label text="Start Date"/>
+                        <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy"/>
+                        <Label text="End Date">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="endDate" prefWidth="153.0" promptText="dd-mm-yyyy"/>
+                        <Button mnemonicParsing="false" onAction="#onSearch" styleClass="btn-primary-outline"
+                                text="Search"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Label text="Search"/>
+                        <TextField fx:id="searchField" promptText="patient name"/>
+                    </children>
+                    <styleClass>
+                        <String fx:value="border-light-3"/>
+                        <String fx:value="container-padded"/>
+                    </styleClass>
+                </HBox>
+                <TableView fx:id="tableView" prefHeight="393.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="patientNo" prefWidth="75.0" text="Inpatient No."/>
+                        <TableColumn fx:id="patientName" prefWidth="75.0" text="Patient Name"/>
+                        <TableColumn fx:id="dateAdmitted" prefWidth="75.0" text="Date Admitted"/>
+                        <TableColumn fx:id="dateDischarged" prefWidth="75.0" text="Date Discharged"/>
+                        <TableColumn fx:id="doctor" prefWidth="75.0" text="Doctor"/>
+                        <TableColumn fx:id="options" prefWidth="75.0" text="Options"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

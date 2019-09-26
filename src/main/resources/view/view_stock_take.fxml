@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="5.0"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.ViewStockTakeController">
+    <styleClass>
+        <String fx:value="scene"/>
+    </styleClass>
+    <children>
+        <Label styleClass="modal-title" text="Stock-take Report">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
+            <styleClass>bg-white</styleClass>
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="87.0" prefWidth="778.0" spacing="5.0">
+                    <children>
+                        <Label text="Date">
+                            <styleClass>
+                                <String fx:value="h7"/>
+                                <String fx:value="color-dark-4"/>
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="dateLabel" text="Label">
+                            <styleClass>
+                                <String fx:value="color-info-dark"/>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                            </styleClass>
+                        </Label>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Label text="User">
+                            <styleClass>
+                                <String fx:value="h7"/>
+                                <String fx:value="color-dark-4"/>
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="userLabel" text="Label">
+                            <styleClass>
+                                <String fx:value="color-info-dark"/>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                            </styleClass>
+                        </Label>
+                        <Pane layoutX="71.0" layoutY="10.0" HBox.hgrow="ALWAYS"/>
+                        <Label prefHeight="6.0" text="Value Change">
+                            <styleClass>
+                                <String fx:value="h7"/>
+                                <String fx:value="color-dark-4"/>
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="valueChangeLabel" text="Label">
+                            <styleClass>
+                                <String fx:value="color-info-dark"/>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                            </styleClass>
+                        </Label>
+                        <Pane layoutX="71.0" layoutY="10.0" HBox.hgrow="ALWAYS"/>
+                        <Label text="Location">
+                            <styleClass>
+                                <String fx:value="h7"/>
+                                <String fx:value="color-dark-4"/>
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="locationLabel" text="Label">
+                            <styleClass>
+                                <String fx:value="color-info-dark"/>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                            </styleClass>
+                        </Label>
+                        <Pane layoutX="218.0" layoutY="10.0" HBox.hgrow="ALWAYS"/>
+                        <Label text="Number of Drugs">
+                            <styleClass>
+                                <String fx:value="h7"/>
+                                <String fx:value="color-dark-4"/>
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="countLabel" text="Label">
+                            <styleClass>
+                                <String fx:value="color-info-dark"/>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                            </styleClass>
+                        </Label>
+                    </children>
+                </HBox>
+                <TableView fx:id="tableView" prefHeight="530.0" prefWidth="778.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="drugCode" prefWidth="75.0" text="Code"/>
+                        <TableColumn fx:id="name" prefWidth="75.0" text="Name"/>
+                        <TableColumn fx:id="systemCount" prefWidth="75.0" text="System Qty"/>
+                        <TableColumn fx:id="physicalCount" prefWidth="75.0" text="Physical Count"/>
+                        <TableColumn fx:id="countDiff" prefWidth="75.0" text="Qty Change"/>
+                        <TableColumn fx:id="valueDiff" prefWidth="75.0" text="Value Change"/>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="778.0" spacing="20.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onExit" styleClass="btn-warning" text="Exit"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                        <Button mnemonicParsing="false" onAction="#onPrint" styleClass="btn-info-outline" text="Print"/>
+                        <Button mnemonicParsing="false" onAction="#onExportToPdf" styleClass="btn-info-outline"
+                                text="Pdf"/>
+                        <Button mnemonicParsing="false" onAction="#onExportToExcel" styleClass="btn-info-outline"
+                                text="Excel"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" prefHeight="450.0" prefWidth="750.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.BillPaymentDetailsController">
+    <children>
+        <Label styleClass="modal-title" text="Payment Details"/>
+        <Separator prefWidth="200.0"/>
+        <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="740.0" spacing="5.0">
+            <children>
+                <Label styleClass="h6_5" text="Receipt No."/>
+                <Label fx:id="receiptNo" text="Label">
+                    <styleClass>
+                        <String fx:value="h6_5"/>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-unique"/>
+                    </styleClass>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label styleClass="h6_5" text="Date:"/>
+                <Label fx:id="date" text="Label">
+                    <styleClass>
+                        <String fx:value="h6_5"/>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-unique"/>
+                    </styleClass>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label styleClass="h6_5" text="Time:"/>
+                <Label fx:id="time" text="Label">
+                    <styleClass>
+                        <String fx:value="h6_5"/>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-unique"/>
+                    </styleClass>
+                </Label>
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                <Label styleClass="h6_5" text="Patient Name:"/>
+                <Label fx:id="patientName" text="Label">
+                    <styleClass>
+                        <String fx:value="h6_5"/>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-unique"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="description" prefWidth="75.0" text="Description"/>
+                <TableColumn fx:id="category" prefWidth="75.0" text="Category"/>
+                <TableColumn fx:id="amount" prefWidth="75.0" text="Amount"/>
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="740.0">
+            <children>
+                <Label text="Received By: "/>
+                <Label fx:id="seller" text="Label"/>
+                <Pane prefHeight="200.0" prefWidth="200.0"/>
+                <Label styleClass="h6" text="Total Paid: "/>
+                <Label fx:id="total" text="Label">
+                    <styleClass>
+                        <String fx:value="h6"/>
+                        <String fx:value="color-dark-2"/>
+                        <String fx:value="fw-500"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</VBox>

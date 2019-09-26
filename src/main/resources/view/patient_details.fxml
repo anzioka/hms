@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="661.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.PatientDetailsController">
+    <children>
+      <Label styleClass="h6" text="Patient Details" />
+      <Separator prefHeight="0.0" prefWidth="691.0" />
+        <GridPane prefHeight="500.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="132.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="268.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" prefHeight="17.0" prefWidth="72.0" text="First Name">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="firstName" GridPane.columnIndex="1" />
+                <Label alignment="CENTER" text="Last Name" GridPane.rowIndex="1">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="lastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="DoB" GridPane.rowIndex="2">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <DatePicker fx:id="datePicker" prefHeight="26.0" prefWidth="171.0" promptText="dd-mm-yyyy" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="ageLabel" text="age" />
+                    </children>
+                </HBox>
+                <Label alignment="CENTER" text="Sex" GridPane.rowIndex="3">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <children>
+                        <RadioButton fx:id="male" mnemonicParsing="false" text="Male" />
+                        <RadioButton fx:id="female" mnemonicParsing="false" text="Female" />
+                    </children>
+                </HBox>
+                <Label text="Marital Status" GridPane.rowIndex="4">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <ChoiceBox fx:id="maritalStatusChoiceBox" prefWidth="320.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="NHIF No." GridPane.rowIndex="5">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="NHIFNumber" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="Residence" GridPane.rowIndex="6">
+                    <styleClass>
+                        <String fx:value="fw-500" />
+                        <String fx:value="color-dark-3" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="residence" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <Label text="Phone No." GridPane.rowIndex="7">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="phoneNumber" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Label alignment="CENTER" prefHeight="17.0" text="Contact First Name" wrapText="true" GridPane.rowIndex="8">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="nextOfKinFirstName" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <Label text="Contact Last Name" GridPane.rowIndex="9">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="nextOfKinLastName" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                <Label text="Contact R/Ship" GridPane.rowIndex="10">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <ChoiceBox fx:id="familyRelationChoiceBox" prefWidth="323.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                <Label text="Contact Phone No." GridPane.rowIndex="11">
+                    <styleClass>
+                        <String fx:value="color-dark-3" />
+                        <String fx:value="fw-500" />
+                    </styleClass>
+                </Label>
+                <TextField fx:id="nextOfKinPhoneNumber" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            </children>
+        </GridPane>
+      <Separator prefHeight="33.0" prefWidth="670.0" />
+        <Pane VBox.vgrow="ALWAYS" />
+        <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="664.0" spacing="5.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onSaveChanges" prefWidth="86.0" styleClass="btn-success" text="Save Details" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

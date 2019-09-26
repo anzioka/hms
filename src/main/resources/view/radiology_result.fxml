@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox fx:controller="main.java.controller.RadiologyResultController" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity"
+      minWidth="-Infinity"
+       prefHeight="400.0" prefWidth="600.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="590.0" spacing="5.0">
+         <children>
+            <Label text="Exam" />
+            <Label fx:id="exam" styleClass="fw-500" text="Label" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label layoutX="10.0" layoutY="22.0" text="Date" />
+            <Label fx:id="date" layoutX="49.0" layoutY="22.0" styleClass="fw-500" text="Label" />
+            <Pane layoutX="88.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+            <Label layoutX="168.0" layoutY="22.0" text="Doctor" />
+            <Label fx:id="doctor" layoutX="201.0" layoutY="22.0" styleClass="fw-500" text="Label" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <Label text="Result">
+         <styleClass>
+            <String fx:value="color-accent" />
+            <String fx:value="fw-500" />
+            <String fx:value="h6_5" />
+         </styleClass>
+      </Label>
+      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="result" style="-fx-font-family: &quot;Lucida Sans Typewriter&quot;;"
+                    text="this is a result that no one expected this is a result that no one expected this is a result that no one expected this is a result that no one expected" wrapText="true" />
+         </children>
+         <styleClass>
+            <String fx:value="border-light-3" />
+            <String fx:value="container-padded" />
+         </styleClass>
+      </VBox>
+   </children>
+</VBox>

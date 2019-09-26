@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="850.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.PrescriptionController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="101.0" prefWidth="657.0" spacing="20.0" styleClass="bg-lighten5">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="3.0">
+                    <children>
+                        <Label text="Medicine">
+                            <styleClass>
+                                <String fx:value="color-dark-2"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="medicineName"/>
+                    </children>
+                </HBox>
+                <VBox alignment="CENTER" spacing="5.0">
+                    <children>
+                        <HBox alignment="CENTER_RIGHT" spacing="3.0">
+                            <children>
+                                <Label prefHeight="16.0" prefWidth="76.0" text="Dosage">
+                                    <styleClass>
+                                        <String fx:value="color-dark-2"/>
+                                        <String fx:value="fw-500"/>
+                                    </styleClass>
+                                </Label>
+                                <ChoiceBox fx:id="dosageOptions" minHeight="-Infinity" minWidth="-Infinity"
+                                           prefHeight="27.0" prefWidth="125.0"/>
+                            </children>
+                        </HBox>
+                        <Pane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" spacing="5.0">
+                            <children>
+                                <Label prefHeight="16.0" prefWidth="82.0" text="Formulation">
+                                    <styleClass>
+                                        <String fx:value="color-dark-2"/>
+                                        <String fx:value="fw-500"/>
+                                    </styleClass>
+                                </Label>
+                                <ChoiceBox fx:id="formulationChoiceBox" minWidth="-Infinity" prefHeight="27.0"
+                                           prefWidth="125.0" HBox.hgrow="ALWAYS"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER_RIGHT" prefHeight="86.0" spacing="5.0">
+                    <children>
+                        <HBox alignment="CENTER_RIGHT" spacing="3.0">
+                            <children>
+                                <Label text="Quantity">
+                                    <styleClass>
+                                        <String fx:value="color-dark-2"/>
+                                        <String fx:value="fw-500"/>
+                                    </styleClass>
+                                </Label>
+                                <TextField onAction="#onSubmitPrescriptionRequest" fx:id="quantity" maxWidth="-Infinity"
+                                           minWidth="-Infinity" prefHeight="27.0" prefWidth="128.0"/>
+                            </children>
+                        </HBox>
+                        <Label prefHeight="22.0" prefWidth="83.0" styleClass="modal-title" text="OR"/>
+                        <HBox alignment="CENTER_RIGHT" spacing="3.0">
+                            <children>
+                                <Label prefHeight="17.0" text="No. of Days">
+                                    <styleClass>
+                                        <String fx:value="color-dark-2"/>
+                                        <String fx:value="fw-500"/>
+                                    </styleClass>
+                                </Label>
+                                <TextField onAction="#onSubmitPrescriptionRequest" fx:id="duration" maxWidth="-Infinity"
+                                           minWidth="-Infinity" prefHeight="27.0" prefWidth="128.0"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Button mnemonicParsing="false" onAction="#onSubmitPrescriptionRequest" styleClass="btn-info-outline"
+                        text="Send Request"/>
+            </children>
+        </HBox>
+        <TableView fx:id="prescriptionTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="date" prefWidth="75.0" text="Date"/>
+                <TableColumn fx:id="user" prefWidth="75.0" text="Requested By"/>
+                <TableColumn fx:id="medicineNameCol" prefWidth="154.0" text="Medicine Name"/>
+                <TableColumn fx:id="formulationCol" prefWidth="75.0" text="Form"/>
+                <TableColumn fx:id="dosageCol" prefWidth="102.0" text="Dosage"/>
+                <TableColumn fx:id="durationCol" prefWidth="94.0" text="No. of Days"/>
+                <TableColumn fx:id="quantityCol" prefWidth="115.0" text="Quantity"/>
+                <TableColumn fx:id="cost" prefWidth="115.0" text="Cost (Ksh)"/>
+                <TableColumn fx:id="options" prefWidth="95.0" text="Options"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

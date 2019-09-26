@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" prefHeight="464.0" prefWidth="818.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.VitalsHistoryController">
+    <children>
+        <Label styleClass="modal-title" text="Vitals History"/>
+        <Separator prefWidth="200.0"/>
+        <TableView fx:id="tableView" editable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="dateCreated" prefWidth="95.0" text="Date"/>
+                <TableColumn fx:id="weight" prefWidth="67.0" text="wt (Kg)"/>
+                <TableColumn fx:id="height" prefWidth="70.0" text="Ht (cm)"/>
+                <TableColumn fx:id="bmi" prefWidth="64.0" text="BMI"/>
+                <TableColumn fx:id="systolicBp" prefWidth="94.0" text="SBP (mmHg)"/>
+                <TableColumn fx:id="diastolicBp" prefWidth="94.0" text="DBP (mmHg)"/>
+                <TableColumn fx:id="bodyTemp" prefWidth="77.0" text="Temp(C)"/>
+                <TableColumn fx:id="respRate" prefWidth="81.0" text="RR (/min)"/>
+                <TableColumn fx:id="pulseRate" prefWidth="78.0" text="PR (/min)"/>
+                <TableColumn fx:id="spO2" prefWidth="79.0" text="SP 02 (%)"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</VBox>

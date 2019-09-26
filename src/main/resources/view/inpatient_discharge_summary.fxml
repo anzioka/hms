@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+
+<ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <content>
+        <VBox alignment="TOP_CENTER" prefWidth="574.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css">
+            <children>
+                <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="68.0" prefWidth="595.0" />
+                <Label text="DISCHARGE SUMMARY">
+                    <styleClass>
+                        <String fx:value="fw-500" />
+                        <String fx:value="h6_5" />
+                    </styleClass>
+                </Label>
+                <Separator prefWidth="200.0" />
+                <HBox prefHeight="63.0" prefWidth="564.0">
+                    <children>
+                        <GridPane prefWidth="250.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" prefWidth="113.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="137.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="INPATIENT NO.">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label text="PATIENT NAME" GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label fx:id="inpatientNo" text="Label" GridPane.columnIndex="1" />
+                                <Label fx:id="patientName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            </children>
+                        </GridPane>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <GridPane prefHeight="59.0" prefWidth="280.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="107.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="146.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="DATE ADMITTED">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label text="DATE DISCHARGED" GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label fx:id="dateAdmitted" text="Label" GridPane.columnIndex="1" />
+                                <Label fx:id="dateDischarged" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefWidth="564.0" spacing="10.0">
+                    <children>
+                        <Label text="WARD:">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="ward" text="Label" />
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0" />
+                <VBox minHeight="40.0" prefWidth="564.0" spacing="5.0">
+                    <children>
+                        <Label text="CLINICAL SUMMARY:">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="clinicalSummary" text="summary" wrapText="true" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox layoutX="15.0" layoutY="405.0" minHeight="40.0" prefWidth="564.0" spacing="5.0">
+                    <children>
+                        <Label text="ATTENDING DOCTORS:">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="doctors" text="doctors" wrapText="true" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox layoutX="15.0" layoutY="239.0" minHeight="40.0" prefWidth="564.0" spacing="5.0">
+                    <children>
+                        <Label text="DIAGNOSIS:">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="diagnosis" text="diagnosis" wrapText="true" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox layoutX="15.0" layoutY="405.0" minHeight="40.0" prefWidth="564.0" spacing="5.0">
+                    <children>
+                        <Label text="PROCEDURES:">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="procedures" text="procedures" wrapText="true" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <VBox layoutX="15.0" layoutY="239.0" minHeight="40.0" prefWidth="564.0" spacing="5.0">
+                    <children>
+                        <Label text="MEDICATION:">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="medication" text="medication" wrapText="true" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+                <Separator prefWidth="200.0" />
+                <HBox alignment="BOTTOM_LEFT" prefHeight="40.0" prefWidth="564.0">
+                    <children>
+                        <Label text="Doctor's Name: " />
+                        <Label prefHeight="17.0" prefWidth="163.0" text=".........................................." />
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label text="Signature" />
+                        <Label text="...................................." />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="723.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.LaboratoryReportsController">
+    <children>
+        <VBox alignment="CENTER" fillWidth="false" minHeight="-Infinity" prefHeight="90.0" prefWidth="492.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="49.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label text="Start Date"/>
+                        <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy"/>
+                        <Label text="End Date">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="endDate" layoutX="78.0" layoutY="28.0" prefWidth="153.0"
+                                    promptText="dd-mm-yyyy"/>
+                    </children>
+                </HBox>
+                <Button mnemonicParsing="false" onAction="#onSearch" styleClass="btn-info-outline"
+                        text="Generate Report"/>
+            </children>
+            <styleClass>
+                <String fx:value="border-light-3"/>
+                <String fx:value="container-padded"/>
+            </styleClass>
+        </VBox>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox alignment="TOP_CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label fx:id="tableTitle" style="-fx-underline: true;" styleClass="header-light-bg"
+                               text="Lab Requests Summary"/>
+                        <TableView fx:id="tableView" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                            <columnResizePolicy>
+                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            </columnResizePolicy>
+                            <columns>
+                                <TableColumn fx:id="dateCol" prefWidth="75.0" text="Date"/>
+                                <TableColumn fx:id="numOfRequestsCol" prefWidth="75.0" text="Number of Requests"/>
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+                <Separator orientation="VERTICAL" prefHeight="200.0"/>
+                <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <LineChart fx:id="chart" VBox.vgrow="ALWAYS">
+                            <xAxis>
+                                <CategoryAxis fx:id="categoryAxis" side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="numberAxis" side="LEFT"/>
+                            </yAxis>
+                        </LineChart>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

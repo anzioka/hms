@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="725.0" spacing="5.0"
+      styleClass="bg-white" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.PrescriptionReportController">
+    <children>
+        <Label fx:id="reportTitle" styleClass="heading2-blue" text="Prescription Summary, Date "/>
+        <Separator prefWidth="200.0"/>
+        <TableView fx:id="tableView" prefHeight="364.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="doctorName" prefWidth="75.0" text="Doctor Name"/>
+                <TableColumn fx:id="patientName" prefWidth="75.0" text="Patient Name"/>
+                <TableColumn fx:id="nameOfDrug" prefWidth="75.0" text="Name of Drug"/>
+                <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity"/>
+                <TableColumn fx:id="cost" prefWidth="75.0" text="Total Cost (Ksh)"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <HBox fx:id="buttonBar" alignment="CENTER_RIGHT">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onPrint" prefWidth="96.0" styleClass="btn-info"
+                        text="Print"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

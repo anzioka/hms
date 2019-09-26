@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" styleClass="bg-white"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8">
+    <children>
+        <Label styleClass="heading2-blue" text="Daily Cash Collection Summary"/>
+        <Separator prefWidth="200.0"/>
+        <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn prefWidth="75.0" text="Receipt Number"/>
+                <TableColumn prefWidth="75.0" text="Patient Name"/>
+                <TableColumn prefWidth="75.0" text="Amount Received"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <HBox alignment="CENTER_RIGHT">
+            <children>
+                <Button mnemonicParsing="false" prefWidth="96.0" styleClass="btn-success" text="Button"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

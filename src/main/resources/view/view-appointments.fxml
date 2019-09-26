@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="408.0" spacing="5.0" style="-fx-background-color: white;" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.ViewAppointments">
+   <children>
+      <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="38.0" prefWidth="446.0">
+         <children>
+            <Label fx:id="title" opacity="0.64" styleClass="h6" text="Wednesday 14 June 2016" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <ScrollPane fitToWidth="true" maxHeight="-Infinity" prefHeight="245.0" prefViewportHeight="245.0" prefViewportWidth="398.0" styleClass="container-padded" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox fx:id="container" spacing="5.0" VBox.vgrow="ALWAYS" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

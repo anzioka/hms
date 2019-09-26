@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.ViewDailyVisitNotesController">
+    <children>
+        <Label styleClass="modal-title" text="Visit Notes" />
+        <Separator prefWidth="200.0" />
+        <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="590.0" spacing="5.0">
+            <children>
+                <Label text="Date: ">
+                    <styleClass>
+                        <String fx:value="fw-500" />
+                        <String fx:value="color-dark-4" />
+                        <String fx:value="h6_5" />
+                    </styleClass>
+                </Label>
+                <Label fx:id="date" text="Label" />
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS" />
+                <Label text="Time">
+                    <styleClass>
+                        <String fx:value="fw-500" />
+                        <String fx:value="color-dark-4" />
+                        <String fx:value="h6_5" />
+                    </styleClass>
+                </Label>
+                <Label fx:id="time" text="Label" />
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS" />
+                <Label fx:id="userLabel" text="Nurse: ">
+                    <styleClass>
+                        <String fx:value="fw-500" />
+                        <String fx:value="color-dark-4" />
+                        <String fx:value="h6_5" />
+                    </styleClass>
+                </Label>
+                <Label fx:id="user" text="Label" />
+            </children>
+        </HBox>
+        <Separator layoutX="15.0" layoutY="42.0" prefWidth="200.0" />
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefViewportHeight="260.0" prefViewportWidth="590.0" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+            <content>
+                <VBox prefWidth="572.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label style="-fx-underline: true;" text="Notes">
+                            <styleClass>
+                                <String fx:value="color-unique" />
+                                <String fx:value="fw-500" />
+                                <String fx:value="h6_5" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="notes" text="Label" wrapText="true" />
+                    </children>
+                </VBox>
+            </content>
+         <styleClass>
+            <String fx:value="border-light-3" />
+            <String fx:value="container-padded" />
+         </styleClass>
+        </ScrollPane>
+        <HBox alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="590.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onClose" styleClass="btn-warning" text="Close" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

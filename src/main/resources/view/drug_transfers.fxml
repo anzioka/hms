@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox fx:id="container" prefHeight="400.0" prefWidth="875.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.StockTransferController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="687.0" spacing="5.0">
+            <children>
+                <Label text="Start Date">
+                    <styleClass>
+                        <String fx:value="fw-500" />
+                        <String fx:value="color-info-dark" />
+                    </styleClass>
+                </Label>
+                <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy" />
+                <Label layoutX="129.0" layoutY="16.0" text="Start Date">
+                    <styleClass>
+                        <String fx:value="fw-500" />
+                        <String fx:value="color-info-dark" />
+                    </styleClass>
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Label>
+                <DatePicker fx:id="endDate" layoutX="196.0" layoutY="10.0" prefWidth="153.0" promptText="dd-mm-yyyy" />
+                <Button mnemonicParsing="false" onAction="#getData" styleClass="fw-500" text="Search Records" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="newTransferBtn" mnemonicParsing="false" onAction="#onNewTransfer" styleClass="btn-primary-outline" text="Transfer Drugs" />
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0" />
+        <TableView fx:id="stockTransferTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="transferNo" prefWidth="75.0" text="Transfer No." />
+                <TableColumn fx:id="dateCreated" prefWidth="75.0" text="Date Transferred" />
+                <TableColumn fx:id="description" prefWidth="75.0" text="Description" />
+                <TableColumn fx:id="quantity" prefWidth="75.0" text="Qty Transferred" />
+                <TableColumn fx:id="transferredBy" prefWidth="75.0" text="Transferred By" />
+                <TableColumn fx:id="details" prefWidth="75.0" text="Details" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

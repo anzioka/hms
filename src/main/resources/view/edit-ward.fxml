@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<AnchorPane prefHeight="478.0" prefWidth="834.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.EditWardController">
+    <children>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" spacing="5.0" stylesheets="@../css/main.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="358.0" layoutY="202.0" text="WARD DETAILS">
+                    <styleClass>
+                        <String fx:value="color-info-dark" />
+                        <String fx:value="fw-500" />
+                        <String fx:value="h6" />
+                    </styleClass>
+                </Label>
+                <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
+                    <children>
+                        <Label text="Description">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="wardName" />
+                        <Label text="No. of Beds">
+                            <styleClass>
+                                <String fx:value="fw-500" />
+                                <String fx:value="color-dark-2" />
+                            </styleClass>
+                            <HBox.margin>
+                                <Insets left="25.0" />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="numBeds" />
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0" />
+                <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="120.0" spacing="20.0">
+                    <children>
+                        <GridPane>
+                            <children>
+                                <Label text="Admission Charge" wrapText="true">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label text="Admission Charge (Corporate)" wrapText="true" GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <TextField fx:id="admissionCharge" GridPane.columnIndex="1" />
+                                <TextField fx:id="corporateAdmissionCharge" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            </children>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="75.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                        </GridPane>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <GridPane layoutX="220.0" layoutY="10.0">
+                            <children>
+                                <Label text="Daily Rate" wrapText="true">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label text="Daily Rate (Corporate)" wrapText="true" GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <TextField fx:id="dailyRate" GridPane.columnIndex="1" />
+                                <TextField fx:id="corporateDailyRate" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            </children>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="75.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                        </GridPane>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <GridPane layoutX="220.0" layoutY="10.0">
+                            <children>
+                                <Label text="Daily Nurse Visit Charge" wrapText="true">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label text="Daily  Nurse Visit Charge (Corporate)" wrapText="true" GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <TextField fx:id="nurseVisitCharge" GridPane.columnIndex="1" />
+                                <TextField fx:id="corporateNurseVisitCharge" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            </children>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                        </GridPane>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <GridPane>
+                            <children>
+                                <Label text="Daily Doctor Visit Charge" wrapText="true">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <Label text="Daily Doctor Visit Charge (Corporate)" wrapText="true" GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-dark-2" />
+                                    </styleClass>
+                                </Label>
+                                <TextField fx:id="doctorVisitCharge" GridPane.columnIndex="1" />
+                                <TextField fx:id="corporateDoctorVisitCharge" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            </children>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="80.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </HBox>
+                <Button mnemonicParsing="false" onAction="#onSaveChanges" styleClass="btn-success" text="Save Changes">
+                    <VBox.margin>
+                        <Insets bottom="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Separator prefWidth="200.0">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Separator>
+                <Label text="BED CHART">
+                    <styleClass>
+                        <String fx:value="color-info-dark" />
+                        <String fx:value="fw-500" />
+                        <String fx:value="h6" />
+                    </styleClass>
+                </Label>
+                <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="778.0" spacing="5.0">
+                    <children>
+                        <Label styleClass="fw-500" text="Beds per Row" />
+                        <ChoiceBox fx:id="numColumnsChoiceBox" prefWidth="100.0" />
+                        <Button mnemonicParsing="false" onAction="#prepareBedChart" styleClass="btn-info-outline" text="Apply" />
+                    </children>
+                </HBox>
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" style="-fx-background-color: #eceff1;" styleClass="container-padded" VBox.vgrow="ALWAYS">
+                            <children>
+                                <FlowPane fx:id="flowPane" alignment="TOP_CENTER" hgap="20.0" prefWrapLength="520.0" style="-fx-background-color: #eceff1;" vgap="25.0" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <styleClass>
+                <String fx:value="border-light-3" />
+                <String fx:value="container-padded" />
+            </styleClass>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="431.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.CreateAppointmentController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="375.0" spacing="5.0" style="-fx-background-color: white;">
+         <children>
+            <Label opacity="0.87" text="Patient : " />
+            <Label fx:id="patientName" text="Label" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Pane layoutX="99.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+            <Label opacity="0.87" text="Doctor" />
+            <Label styleClass="required" text="*" />
+            <ChoiceBox fx:id="doctorChoiceBox" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="375.0" spacing="5.0" style="-fx-background-color: #f5f5f5;">
+         <children>
+            <Label opacity="0.87" text="Date" />
+            <DatePicker fx:id="datePicker" prefWidth="150.0" promptText="dd-mm-yyyy" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label opacity="0.87" text="Time" />
+            <HBox alignment="CENTER">
+               <children>
+                  <ChoiceBox fx:id="hourChoiceBox" prefHeight="27.0" prefWidth="60.0" />
+                  <ChoiceBox fx:id="minuteChoiceBox" layoutX="220.0" layoutY="18.0" prefHeight="27.0" prefWidth="60.0" />
+                  <ChoiceBox fx:id="timePeriodChoiceBox" layoutX="325.0" layoutY="15.0" prefHeight="27.0" prefWidth="60.0" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <VBox prefHeight="89.0" prefWidth="375.0" spacing="5.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label opacity="0.87" text="Add note (Optional)" />
+            <TextField fx:id="editNote" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="375.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onBookAppointment" styleClass="btn-success" text="Book Appointment" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

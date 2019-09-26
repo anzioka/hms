@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="530.0" prefWidth="700.0" spacing="5.0"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.EditStockTransferController">
+    <styleClass>
+        <String fx:value="scene"/>
+        <String fx:value="padding-5"/>
+    </styleClass>
+    <children>
+        <Label styleClass="modal-title" text="New Stock Transfer"/>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" styleClass="bg-white" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="679.0">
+                    <children>
+                        <Label text="Transfer from ">
+                            <styleClass>
+                                <String fx:value="color-dark-3"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="retailUnitChoiceBox" prefHeight="27.0" prefWidth="175.0"/>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="693.0" spacing="5.0">
+                    <children>
+                        <Label text="Medicine name">
+                            <styleClass>
+                                <String fx:value="color-dark-3"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="medicineNameField"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Label text="Quantity">
+                            <styleClass>
+                                <String fx:value="color-dark-3"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="quantityField" layoutX="113.0" layoutY="19.0" onAction="#onAddToTransfer"/>
+                        <Button mnemonicParsing="false" onAction="#onAddToTransfer" styleClass="btn-info-outline"
+                                text="Add"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="stockTransferTableView" prefHeight="281.0" prefWidth="693.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="drugId" prefWidth="75.0" text="Code"/>
+                        <TableColumn fx:id="drugName" prefWidth="75.0" text="Name"/>
+                        <TableColumn fx:id="storeQty" prefWidth="75.0" text="Qty in Store"/>
+                        <TableColumn fx:id="shopQty" prefWidth="75.0" text="Qty in Shop"/>
+                        <TableColumn fx:id="quantityTransferred" prefWidth="75.0" text="Quantity"/>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="678.0" spacing="15.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onClose" styleClass="btn-warning" text="Close"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Button minHeight="-Infinity" mnemonicParsing="false" onAction="#onDeleteEntry"
+                                prefHeight="26.0" styleClass="btn-primary-outline" text="Delete Entry"/>
+                        <Button layoutX="74.0" layoutY="22.0" mnemonicParsing="false" onAction="#onSaveTransfer"
+                                styleClass="btn-success" text="Save Transfer"/>
+                    </children>
+                    <styleClass>
+                        <String fx:value="border-grey-dark"/>
+                        <String fx:value="padding-5"/>
+                    </styleClass>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox fx:id="container" prefHeight="400.0" prefWidth="700.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.PurchasesController">
+    <children>
+        <HBox alignment="CENTER_RIGHT" spacing="5.0">
+            <children>
+                <Label id="fw" text="Start Date">
+               <styleClass>
+                  <String fx:value="fw-500" />
+                  <String fx:value="color-info-dark" />
+               </styleClass>
+                </Label>
+                <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy" />
+                <Label layoutX="10.0" layoutY="16.0" text="End">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+               <styleClass>
+                  <String fx:value="fw-500" />
+                  <String fx:value="color-info-dark" />
+               </styleClass>
+                </Label>
+                <DatePicker fx:id="endDate" layoutX="78.0" layoutY="11.0" prefWidth="153.0" promptText="dd-mm-yyyy" />
+                <Button id="fw" mnemonicParsing="false" onAction="#searchPurchases" styleClass="fw-500" text="Search Records" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="newPurchaseButton" mnemonicParsing="false" onAction="#onNewPurchase" styleClass="btn-primary-outline" text="Receive Drugs" />
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0" />
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="invoiceNo" prefWidth="75.0" text="Invoice No." />
+                <TableColumn fx:id="supplier" prefWidth="75.0" text="Supplier" />
+                <TableColumn fx:id="date" prefWidth="75.0" text="Date" />
+                <TableColumn fx:id="totalCost" prefWidth="75.0" text="Total Cost" />
+                <TableColumn fx:id="receivedBy" prefWidth="75.0" text="Received By" />
+                <TableColumn fx:id="options" prefWidth="75.0" text="Options" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

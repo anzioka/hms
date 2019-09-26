@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+            fx:controller="main.java.controller.CashSaleRecordsController">
+    <children>
+        <VBox fx:id="paymentSummaryContainer" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+              minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="830.0" spacing="7.0"
+              styleClass="bg-white" stylesheets="@../css/main.css" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="reportTitle" styleClass="heading2-blue" text="Cash Collection Summary"/>
+                <Label fx:id="subTitle" styleClass="header-light-bg" text="subtitle"/>
+                <VBox alignment="CENTER" prefWidth="600.0" spacing="20.0">
+                    <children>
+                        <HBox fx:id="searchBoxHolder" alignment="CENTER" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Label styleClass="header-light-bg" text="From:"/>
+                                <DatePicker fx:id="fromDate" prefHeight="27.0" prefWidth="128.0"
+                                            promptText="dd-mm-yyyy"/>
+                                <Label styleClass="header-light-bg" text="To:"/>
+                                <DatePicker fx:id="toDate" prefHeight="27.0" prefWidth="152.0" promptText="dd-mm-yyyy"/>
+                                <Button mnemonicParsing="false" onAction="#onSearchRecords" prefWidth="96.0"
+                                        styleClass="btn-info" text="Search"/>
+                                <Button mnemonicParsing="false" onAction="#onReset" prefWidth="96.0"
+                                        styleClass="btn-default" text="Reset"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <Separator prefWidth="200.0"/>
+                <TableView fx:id="cashSaleTableView" maxHeight="1.7976931348623157E308" prefWidth="600.0"
+                           VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="dateCol" prefWidth="154.0" text="Date"/>
+                        <TableColumn fx:id="receiptNumber" prefWidth="118.0" text="Receipt No."/>
+                        <TableColumn fx:id="patientNo" prefWidth="119.0" text="Patient No."/>
+                        <TableColumn fx:id="patientName" prefWidth="239.0" style="-fx-alignment: center-left;"
+                                     text="Patient Name"/>
+                        <TableColumn fx:id="totalAmount" prefWidth="163.0" text="Amount  (Ksh)"/>
+                        <TableColumn fx:id="options" prefWidth="166.0" text="Options"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+                <HBox fx:id="buttonBar" alignment="CENTER_RIGHT" prefWidth="600.0" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onPrint" styleClass="btn-primary"
+                                text="Print Records"/>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets top="10.0"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

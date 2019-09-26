@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="364.0" prefWidth="542.0" spacing="5.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.MedicalRecordsController">
+   <styleClass>
+      <String fx:value="scene" />
+      <String fx:value="container-padded" />
+   </styleClass>
+   <children>
+      <Label styleClass="h6" text="Hospital Visit History" underline="true" />
+      <Pane prefHeight="87.0" prefWidth="532.0" />
+      <Separator prefWidth="200.0" />
+      <HBox fx:id="container" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <VBox id="outpatient_medical_records"  alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="bg-info">
+               <children>
+                  <VBox  alignment="CENTER" prefHeight="65.0" prefWidth="100.0" spacing="3.0" styleClass="btn-info" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label text="Outpatient" underline="true">
+                           <styleClass>
+                              <String fx:value="color-white" />
+                              <String fx:value="h6" />
+                           </styleClass>
+                        </Label>
+                        <Label fx:id="numVisits" text="4">
+                           <styleClass>
+                              <String fx:value="color-white" />
+                              <String fx:value="fw-500" />
+                              <String fx:value="h5" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="25.0" styleClass="bg-info-dark">
+                     <children>
+                        <Label styleClass="color-white" text="Click to View" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox id="inpatient_medical_records" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="bg-info">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="60.0" prefWidth="100.0" spacing="3.0" styleClass="btn-info" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label text="Admissions" underline="true">
+                           <styleClass>
+                              <String fx:value="color-white" />
+                              <String fx:value="h6" />
+                           </styleClass>
+                        </Label>
+                        <Label fx:id="numAdmissions" text="5">
+                           <styleClass>
+                              <String fx:value="color-white" />
+                              <String fx:value="fw-500" />
+                              <String fx:value="h5" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="25.0" styleClass="bg-info-dark">
+                     <children>
+                        <Label styleClass="color-white" text="Click to View" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

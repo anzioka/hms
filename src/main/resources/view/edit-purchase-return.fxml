@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="500.0" prefWidth="758.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.EditPurchaseReturnController">
+    <children>
+        <Label text="New Purchase Return">
+            <styleClass>
+                <String fx:value="h6"/>
+                <String fx:value="modal-title"/>
+            </styleClass>
+        </Label>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                      prefHeight="40.0" prefWidth="678.0" spacing="5.0" styleClass="bg-light-6">
+                    <children>
+                        <Label text="Invoice No.">
+                            <styleClass>
+                                <String fx:value="color-unique"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="invoiceSearchField" onAction="#onSearchPurchase" prefHeight="27.0"
+                                   prefWidth="178.0"/>
+                        <Button mnemonicParsing="false" onAction="#onSearchPurchase" styleClass="btn-primary-outline"
+                                text="Search"/>
+                        <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                        <Label text="Source">
+                            <styleClass>
+                                <String fx:value="color-unique"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="medicineLocationChoiceBox" prefHeight="27.0" prefWidth="167.0"/>
+                    </children>
+                    <padding>
+                        <Insets left="5.0" right="5.0"/>
+                    </padding>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="678.0" spacing="5.0">
+                    <children>
+                        <Label text="Medicine">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="nameSearchField" prefHeight="27.0" prefWidth="157.0"/>
+                        <Label text="Qty">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="quantityField" prefHeight="27.0" prefWidth="66.0"/>
+                        <Label text="Note">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="editNote" onAction="#onAddItemToReturns" HBox.hgrow="ALWAYS"/>
+                        <Button mnemonicParsing="false" onAction="#onAddItemToReturns" styleClass="btn-info-outline"
+                                text="Add"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="drugName" prefWidth="75.0" text="Name"/>
+                        <TableColumn fx:id="quantityReturned" prefWidth="75.0" text="Quantity"/>
+                        <TableColumn fx:id="buyingPrice" prefWidth="75.0" text="Buying Price"/>
+                        <TableColumn fx:id="totalPrice" prefWidth="75.0" text="Total Price"/>
+                        <TableColumn fx:id="note" prefWidth="75.0" text="Note(s)"/>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <Label styleClass="h6" text="Total Returns Value"/>
+                        <Label fx:id="totalLabel" layoutX="655.0" layoutY="22.0" text="Ksh 0">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h6"/>
+                                <String fx:value="color-info-dark"/>
+                            </styleClass>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="678.0" spacing="20.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onExit" styleClass="btn-warning" text="Exit"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Button mnemonicParsing="false" onAction="#onRemoveItem" styleClass="btn-primary"
+                                text="Remove Item"/>
+                        <Button mnemonicParsing="false" onAction="#onSave" styleClass="btn-success" text="Save"/>
+                    </children>
+                    <padding>
+                        <Insets left="5.0" right="5.0"/>
+                    </padding>
+                    <styleClass>
+                        <String fx:value="container-padded"/>
+                        <String fx:value="border-light-3"/>
+                    </styleClass>
+                </HBox>
+            </children>
+            <styleClass>
+                <String fx:value="border-light-3"/>
+                <String fx:value="container-padded"/>
+            </styleClass>
+        </VBox>
+    </children>
+</VBox>

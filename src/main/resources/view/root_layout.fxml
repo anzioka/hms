@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="789.0" prefWidth="784.0" styleClass="background" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.MainController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="200.0" styleClass="bg-darker2">
+            <children>
+                <VBox alignment="CENTER_LEFT">
+                    <children>
+                        <Label fx:id="hospitalName" style="-fx-text-fill: #60B0F4;" styleClass="h4" text="Name of hospital" />
+                        <Label fx:id="hospitalAddress" style="-fx-text-fill: #60B0F4;" styleClass="h6" text="address" />
+                    </children>
+                </VBox>
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+            <MenuButton fx:id="userButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="user-button" text="user">
+              <items>
+                <MenuItem fx:id="logoutButton" mnemonicParsing="false" text="Logout" />
+              </items>
+            </MenuButton>
+            </children>
+        </HBox>
+        <SplitPane dividerPositions="0.5" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <items>
+                <VBox maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0">
+                    <children>
+                          <VBox fx:id="sideNavContainer" maxWidth="-Infinity" spacing="1.0">
+                              <children>
+                                  <HBox id="home_screen" fx:id="homeScreen" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/dashboard.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Home" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="patient_registration" fx:id="patientRegistration" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="250.0" prefHeight="35.0" prefWidth="250.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="NEVER">
+                                              <image>
+                                                  <Image url="@../images/patient_reg_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label prefHeight="17.0" prefWidth="145.0" styleClass="color-white" text="Patient Registration" HBox.hgrow="ALWAYS" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="inpatient_management" fx:id="inpatientManagement" alignment="CENTER_LEFT" layoutX="10.0" layoutY="334.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/patient_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Inpatient Management" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="bed_and_ward" fx:id="bedManagement" alignment="CENTER_LEFT" layoutX="10.0" layoutY="406.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/ward-white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Bed &amp; Ward Management" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="billing" fx:id="billing" alignment="CENTER_LEFT" layoutX="10.0" layoutY="154.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/billing_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Billing" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="nursing_module" fx:id="nursingDepartment" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="162.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/nurse_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Nursing Station" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="doctor_module" fx:id="doctorModule" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="250.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/doctor_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Doctor" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="pharmacy" fx:id="pharmacyDepartment" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/pharmacy_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Pharmacy" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="lab" fx:id="labDepartment" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/lab_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Laboratory" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="radiology" fx:id="radiology" alignment="CENTER_LEFT" layoutX="10.0" layoutY="478.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/imaging_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Radiology" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="patient_records" fx:id="patientRecords" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/medical_records_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Patient Records" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="inventory" fx:id="inventory" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/inventory_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Stock Control" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="accounting" fx:id="accounting" alignment="CENTER_LEFT" layoutX="10.0" layoutY="406.0" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/accounting-white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Accounting" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="reports" fx:id="reports" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/reports_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Reports" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                                  <HBox id="admin_dashboard" fx:id="administrative" alignment="CENTER_LEFT" maxHeight="-Infinity" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+                                      <children>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../images/settings_white.png" />
+                                              </image>
+                                          </ImageView>
+                                          <Label styleClass="color-white" text="Admin Dashboard" />
+                                      </children>
+                                      <styleClass>
+                                          <String fx:value="bg-normal" />
+                                          <String fx:value="sidenav" />
+                                      </styleClass>
+                                  </HBox>
+                              </children>
+                          </VBox>
+                        <VBox style="-fx-background-color: #546e7a;" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            </items>
+        </SplitPane>
+        <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="600.0" VBox.vgrow="NEVER">
+            <padding>
+                <Insets left="10.0" right="10.0" />
+            </padding>
+            <children>
+                <Label fx:id="logInTimeLabel" text="logintime" />
+                <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                <Label fx:id="version" text="version" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

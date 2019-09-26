@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" fx:controller="main.java.controller.MedicineListController"
+      alignment="CENTER" prefHeight="446.0" prefWidth="600.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8">
+    <children>
+        <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="590.0" spacing="5.0" styleClass="border-light-3">
+            <children>
+                <Label styleClass="h6_5" text="Search medicines"/>
+                <TextField fx:id="searchField"/>
+            </children>
+        </HBox>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="code" prefWidth="75.0" text="Code"/>
+                <TableColumn fx:id="name" prefWidth="75.0" text="Name"/>
+                <TableColumn prefWidth="75.0" text="Quantity">
+                    <columns>
+                        <TableColumn fx:id="shopQuantity" prefWidth="75.0" text="Pharmacy"/>
+                        <TableColumn fx:id="storeQuantity" prefWidth="75.0" text="Store"/>
+                    </columns>
+                </TableColumn>
+                <TableColumn fx:id="sellingPrice" prefWidth="75.0" text="Selling Price"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</VBox>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="480.0" prefWidth="669.0" spacing="5.0" styleClass="bg-white"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.EditTestResultController">
+    <children>
+        <HBox prefHeight="73.0" prefWidth="588.0" spacing="10.0" styleClass="bg-lighten4">
+            <children>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="80.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="header" text="Patient No."/>
+                        <Label styleClass="header" text="Sex" GridPane.rowIndex="1"/>
+                        <Label text="Label" GridPane.columnIndex="1"/>
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="84.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="116.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="header" text="First Name"/>
+                        <Label styleClass="header" text="Last Name" GridPane.rowIndex="1"/>
+                        <Label prefHeight="17.0" prefWidth="51.0" text="Label" GridPane.columnIndex="1"/>
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="55.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="145.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="header" text="DOB"/>
+                        <Label styleClass="header" text="Age" GridPane.rowIndex="1"/>
+                        <Label text="Label" GridPane.columnIndex="1"/>
+                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+            </children>
+        </HBox>
+        <VBox alignment="CENTER" prefHeight="49.0" prefWidth="657.0" spacing="5.0" styleClass="btn-success">
+            <children>
+                <Label styleClass="header-dark-bg" text="Payment Mode : Insurance"/>
+                <Label prefHeight="17.0" styleClass="header-dark-bg" text="Status: NOT PAID"/>
+            </children>
+        </VBox>
+        <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn prefWidth="67.0" text="Test #"/>
+                <TableColumn prefWidth="282.0" style="-fx-alignment: center-left;" text="Test Name"/>
+                <TableColumn prefWidth="307.0" style="-fx-alignment: center-left;" text="Results"/>
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="657.0" spacing="10.0" styleClass="bg-lighten5">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Results Submitted by:"/>
+                <Label styleClass="header-light-bg" text="Label"/>
+                <Label/>
+                <Button mnemonicParsing="false" styleClass="btn-success" text="Submit Results"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

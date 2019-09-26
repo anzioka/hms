@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="discharge_summary" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13abe120-b6fc-4f67-a7b4-f7cf926cecd0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="hospital_name" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="hospital_address" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="hospital_phone" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="inpatient_no" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="patient_name" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="date_of_birth" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="age" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="sex" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="admitted_by" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="date_admitted" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="date_discharged" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ward" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="bed" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="summary" class="java.lang.String">
+		<parameterDescription><![CDATA[summary]]></parameterDescription>
+	</parameter>
+	<parameter name="diagnosis" class="java.lang.String"/>
+	<parameter name="procedures" class="java.lang.String"/>
+	<parameter name="medication" class="java.lang.String"/>
+	<parameter name="doctors" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="214" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="17" uuid="082be798-6613-4109-9200-0f91d181cc3b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hospital_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="555" height="17" uuid="52b49574-4dfd-4090-8466-fbe22786ef1d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hospital_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="40" width="555" height="17" uuid="21363256-50d9-4e6b-acd3-4bf620a23908"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{hospital_phone}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="60" width="555" height="1" uuid="73cad004-8dba-490a-a075-eb9fb5421510"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="65" width="555" height="15" uuid="0f21bc1e-64b3-42d2-8318-fe7150ff7f99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PATIENT DISCHARGE SUMMARY]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="85" width="555" height="1" uuid="abc12fc3-2e76-4de2-9ec0-2871b77636a5"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="90" width="80" height="15" uuid="36cff8d4-a40c-4968-b8ef-681fd6ba8ccf"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Patient Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="70" height="15" uuid="0b6bdebe-eee7-46ee-ae20-a05b149ed395"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Inpatient No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="110" width="100" height="15" uuid="85f57ada-d7e5-4354-a8c0-dcea30a950cd"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{inpatient_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="130" width="70" height="15" uuid="c3a3e2c0-7197-40be-960b-a687976b30d2"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Patient Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="130" width="170" height="15" uuid="88cd5f6e-9078-4d49-97f6-98869fcf638c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{patient_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="150" width="70" height="14" uuid="99d50eee-7760-49a8-a833-ee280d3b4e0a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Date of Birth:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="150" width="100" height="14" uuid="e7090365-fe50-4fc5-a8d1-8f98e877a17f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{date_of_birth}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="170" width="70" height="15" uuid="d73e1245-6caf-497b-9759-c52245bfd1c2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Age:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="170" width="100" height="15" uuid="554221b9-9a72-454d-8caa-5c9a8cd7df47"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="190" width="70" height="15" uuid="428fdea0-6e52-4add-ad3b-1ef018b207d0"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Sex:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="190" width="100" height="15" uuid="1e773fff-d667-44cd-bc2d-606c933f78a2"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{sex}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="210" width="555" height="1" uuid="0cdae8c4-7bf2-4e92-a21d-d4187964dd50"/>
+			</line>
+			<staticText>
+				<reportElement x="340" y="90" width="100" height="15" uuid="81efe3d4-ab65-47dc-9e3c-289cb622a4c3"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Admission Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="110" width="90" height="15" uuid="c7dbabc4-3b66-422b-a22d-5ad82f29ed10"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Admitted By:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="130" width="90" height="15" uuid="03ac24be-391d-4151-ac85-8dab4c8fafe4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Date Admitted:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="150" width="90" height="15" uuid="33bd91e6-bb7d-4c78-b083-260f706cf533"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Date Discharged:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="170" width="90" height="15" uuid="64b3dd47-0a8a-498c-8aee-8ba8ece54be7"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ward:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="430" y="110" width="125" height="15" uuid="e9a4ea91-ead1-494d-ac8e-05bc17cd093c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{admitted_by}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="130" width="125" height="15" uuid="d19817e5-5bd5-4683-983f-35dd4983d387"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{date_admitted}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="430" y="150" width="125" height="15" uuid="ec7385e7-070f-415f-92e6-3de35f7e6dc6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{date_discharged}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="430" y="170" width="125" height="15" uuid="c3227a31-54b6-4d6f-ac7e-d623f7cccf10"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{ward}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="192" width="90" height="13" uuid="8b82db68-badc-441b-8004-c791b9561342"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Bed No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="190" width="125" height="15" uuid="3051b991-0e17-40ac-992e-fdd80ce06a13"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{bed}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="259" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="15" uuid="35d0598b-cbf2-47ef-b1cb-7edcc7355653"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Clinical Summary]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="25" width="555" height="15" uuid="4a7cb358-faca-4e1f-a535-c93908a5c9cd"/>
+				<textElement>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{summary}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="60" width="100" height="15" uuid="5eefcfcd-b7a9-4a65-8c7b-e3fd878ddadd"/>
+				<textElement>
+					<font isUnderline="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Attending Doctors]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="75" width="555" height="15" uuid="2666da50-fe58-4542-8a02-df3e65e65aec"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{doctors}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="110" width="100" height="15" uuid="5a825bbd-e4ca-4929-8e3a-3461de25c80a"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Diagnosis]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="125" width="555" height="15" uuid="ebc28b47-e49e-468f-b4e0-d7c759309c17"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{diagnosis}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="160" width="100" height="15" uuid="95cfd7b6-dc01-4543-8c2e-2acfa114e14f"/>
+				<textElement verticalAlignment="Middle">
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Procedures]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="175" width="555" height="15" uuid="50702102-c9f8-473c-a53d-c1503c71329f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{procedures}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="210" width="100" height="15" uuid="8abbbd94-710b-4b76-9b58-901ac6cdbd9b"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Medication]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="225" width="555" height="15" uuid="ce6d192f-59d7-49af-a094-f1db5a0197af"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{medication}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="80" height="15" uuid="3ed1df3c-5647-43f3-a39f-b9e64f54d1b4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Doctor’s Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="13" width="150" height="15" uuid="f2b1acd8-4621-46de-a3b6-e049c7e4bc3b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[……………………………………]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="13" width="100" height="15" uuid="a0af590c-2dd3-4f80-b100-715a46ac2334"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Signature:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="13" width="125" height="15" uuid="6643559d-45fd-47ac-8c5d-a4f84095f678"/>
+				<text><![CDATA[…………………………….........]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="40" width="100" height="15" uuid="ef9763de-36e1-4f38-82f1-e9b5f2984db7"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="40" width="125" height="15" uuid="082ac2b8-4db8-48b7-9d0e-d22c269ed8ec"/>
+				<text><![CDATA[……………………………………………………]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="7d0e65da-d859-47a4-8f6e-e69c4321d4b9"/>
+			</line>
+		</band>
+	</lastPageFooter>
+</jasperReport>

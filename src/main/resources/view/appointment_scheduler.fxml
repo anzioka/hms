@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import java.lang.String?>
+<VBox fx:id="container" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="710.0" style="-fx-background-color: white;" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.AppointmentController">
+   <styleClass>
+      <String fx:value="scene" />
+      <String fx:value="container-padded" />
+      <String fx:value="calendar" />
+   </styleClass>
+   <children>
+      <HBox alignment="CENTER" fillHeight="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="58.0" prefWidth="677.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onSetCurrentDate" prefHeight="27.0" prefWidth="93.0" text="TODAY" />
+            <StackPane id="prev" fx:id="prevControl" layoutX="226.0" layoutY="21.0" prefHeight="25.0" prefWidth="25.0">
+               <children>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/left-chevron.png" />
+                     </image>
+                  </ImageView>
+                  <Circle fill="WHITE" opacity="0.46" radius="15.0" stroke="WHITE" strokeType="INSIDE" styleClass="calendar-control" />
+               </children>
+            </StackPane>
+            <StackPane id="next" fx:id="nextControl" prefHeight="25.0" prefWidth="25.0">
+               <children>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/right-chevron.png" />
+                     </image>
+                  </ImageView>
+                  <Circle fill="WHITE" opacity="0.46" radius="15.0" stroke="WHITE" strokeType="INSIDE" styleClass="calendar-control" />
+               </children>
+            </StackPane>
+            <Label fx:id="calendarTitle" opacity="0.57" styleClass="h4" text="September 2018" />
+            <ChoiceBox fx:id="calendarViewChoiceBox" prefWidth="150.0" />
+            <StackPane onMouseClicked="#onNewAppointment" prefHeight="58.0" prefWidth="62.0">
+               <children>
+                  <Circle fill="#00b7ee" radius="16.0" stroke="#33b5e5" strokeType="INSIDE" styleClass="create-appointment" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/add.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <VBox fx:id="dayViewBox" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox alignment="CENTER_LEFT" fillWidth="false" minHeight="-Infinity" prefHeight="70.0" prefWidth="701.0">
+               <children>
+                  <VBox alignment="CENTER" spacing="3.0">
+                     <children>
+                        <Label fx:id="dayOfWeekLabel" opacity="0.75" styleClass="h6" text="Sat" />
+                        <Label fx:id="dayOfMonthLabel" opacity="0.55" styleClass="h2" text="1" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <Separator layoutX="10.0" layoutY="602.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+      <FlowPane fx:id="monthViewPane" prefWidth="700.0" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>

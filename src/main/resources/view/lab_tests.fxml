@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="container" minHeight="0.0" minWidth="0.0" prefHeight="466.0" prefWidth="884.0"
+            styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+            fx:controller="main.java.controller.LabTestsController">
+    <children>
+        <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="5.0" layoutY="5.0" spacing="5.0"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="850.0" spacing="5.0"
+                      styleClass="bg-lighten5">
+                    <children>
+                        <Button fx:id="newLabTestBtn" onAction="#onNewLabTest" mnemonicParsing="false" styleClass="btn-default"
+                                text="New Test"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                        <Label styleClass="color-accent" text="Search"/>
+                        <TextField fx:id="testFilter"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="tableView" prefHeight="412.0" prefWidth="850.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="name" prefWidth="75.0" text="Name"/>
+                        <TableColumn fx:id="cost" prefWidth="75.0" text="Cost"/>
+                        <TableColumn fx:id="flags" prefWidth="75.0" text="Flags">
+                            <columns>
+                                <TableColumn fx:id="flagName" prefWidth="75.0" text="Flag"/>
+                                <TableColumn fx:id="flagRange" prefWidth="75.0" text="Normal"/>
+                            </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="options" prefWidth="246.0" text="Options"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

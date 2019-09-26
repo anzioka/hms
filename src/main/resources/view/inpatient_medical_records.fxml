@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox fx:id="container" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="700.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.InpatientRecordsController">
+   <children>
+      <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" prefHeight="470.0" prefWidth="540.0" styleClass="container-padded" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="597.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="dateAdmitted" styleClass="color-white" text="date admitted" />
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label fx:id="dateDischarged" styleClass="color-white" text="date discharged" />
+                        <Pane layoutX="44.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="doctor" layoutX="244.0" layoutY="22.0" styleClass="color-white" text="doc" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="bg-teal" />
+                        <String fx:value="container-padded" />
+                     </styleClass>
+                  </HBox>
+                  <VBox minHeight="100.0" spacing="5.0" style="-fx-background-color: #FAFAFA;">
+                     <children>
+                        <Label styleClass="fw-500" text="Clinical Summary" />
+                        <Label fx:id="clinicalSummary" wrapText="true" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="container-padded" />
+                        <String fx:value="border-light-3" />
+                     </styleClass>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="50.0" minHeight="100.0" spacing="5.0" style="-fx-background-color: #FAFAFA;">
+                     <children>
+                        <Label styleClass="fw-500" text="Diagnosis" />
+                        <Label fx:id="diagnosis" text="Label" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="container-padded" />
+                        <String fx:value="border-light-3" />
+                     </styleClass>
+                  </VBox>
+                  <HBox alignment="CENTER" minHeight="100.0" spacing="5.0">
+                     <children>
+                        <VBox layoutX="10.0" layoutY="185.0" spacing="5.0" style="-fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="fw-500" text="Procedures" />
+                              <Label fx:id="procedures" text="Label" wrapText="true" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="container-padded" />
+                              <String fx:value="border-light-3" />
+                           </styleClass>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="50.0" spacing="5.0" style="-fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="fw-500" text="Medication" />
+                              <Label fx:id="medication" text="Label" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="container-padded" />
+                              <String fx:value="border-light-3" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="320.0" minHeight="130.0" spacing="5.0">
+                     <children>
+                        <VBox layoutX="10.0" layoutY="185.0" spacing="5.0" style="-fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="fw-500" text="Lab Tests" />
+                              <TableView fx:id="labTestsTableView" prefHeight="67.0" prefWidth="0.0" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="labTest" prefWidth="75.0" text="Test" />
+                                  <TableColumn fx:id="labResult" prefWidth="75.0" text="Result" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container-padded" />
+                              <String fx:value="border-light-3" />
+                           </styleClass>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="50.0" spacing="5.0" style="-fx-background-color: #FAFAFA;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label styleClass="fw-500" text="Radiology" />
+                              <TableView fx:id="radiologyTableView" prefHeight="67.0" prefWidth="0.0" VBox.vgrow="ALWAYS">
+                                <columns>
+                                  <TableColumn fx:id="radiologyTest" prefWidth="75.0" text="Test" />
+                                  <TableColumn fx:id="radiologyResult" prefWidth="75.0" text="Result" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                           <styleClass>
+                              <String fx:value="container-padded" />
+                              <String fx:value="border-light-3" />
+                           </styleClass>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="doctorNotes" layoutX="10.0" layoutY="185.0" minHeight="200.0" spacing="5.0" style="-fx-background-color: #FAFAFA;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="fw-500" text="Doctor Notes" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="container-padded" />
+                        <String fx:value="border-light-3" />
+                     </styleClass>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <VBox fx:id="pagination" alignment="CENTER" fillWidth="false" minHeight="-Infinity" prefHeight="40.0" prefWidth="690.0">
+         <children>
+            <HBox alignment="CENTER" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <ImageView id="prev" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/arrow-left-bold.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView id="next" fitHeight="22.0" fitWidth="22.0" layoutX="343.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/arrow-right-bold.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Label styleClass="fw-500" text="1/1" />
+         </children>
+      </VBox>
+   </children>
+</VBox>

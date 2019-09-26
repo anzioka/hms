@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="508.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.RadiologyItemsController">
+   <children>
+      <VBox prefWidth="850.0" spacing="5.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="640.0" spacing="5.0">
+               <children>
+                  <Label text="Category" />
+                  <ChoiceBox fx:id="radiologyCategoryChoiceBox" prefWidth="150.0" />
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <Button fx:id="addItemBtn" layoutX="387.0" layoutY="15.0" mnemonicParsing="false" onAction="#onAddItem" styleClass="btn-info" text="Add Item" />
+                  <Pane layoutX="445.0" layoutY="10.0" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="searchField" promptText="Description" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox fx:id="editBox" alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="45.0" prefWidth="778.0" spacing="5.0" styleClass="border-success">
+               <children>
+                  <ChoiceBox fx:id="editCategoryChoiceBox" prefWidth="150.0" />
+                  <TextField fx:id="editDescription" alignment="CENTER" prefHeight="26.0" prefWidth="258.0" promptText="Description" />
+                  <TextField fx:id="editCost" alignment="CENTER" onAction="#onSave" prefHeight="26.0" prefWidth="133.0" promptText="Cost" />
+                  <Button mnemonicParsing="false" onAction="#onSave" styleClass="btn-success" text="Save " />
+               </children>
+            </HBox>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <columns>
+                  <TableColumn fx:id="category" prefWidth="75.0" text="Category" />
+                <TableColumn fx:id="description" prefWidth="75.0" text="Description" />
+                <TableColumn fx:id="cost" prefWidth="75.0" text="Cost" />
+                  <TableColumn fx:id="options" prefWidth="75.0" text="Options" />
+              </columns>
+            </TableView>
+         </children>
+         <styleClass>
+            <String fx:value="border-light-3" />
+            <String fx:value="container-padded" />
+         </styleClass>
+      </VBox>
+   </children>
+</VBox>

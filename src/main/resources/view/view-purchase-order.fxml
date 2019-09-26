@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.ViewPurchaseOrderController">
+    <children>
+        <Label text="PURCHASE ORDER">
+            <styleClass>
+                <String fx:value="h4"/>
+                <String fx:value="color-dark-4"/>
+            </styleClass>
+        </Label>
+        <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="688.0">
+            <children>
+                <Label fx:id="orderNumber" text="Order No.">
+                    <styleClass>
+                        <String fx:value="h7"/>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-dark-3"/>
+                    </styleClass>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label fx:id="date" text="Date">
+                    <styleClass>
+                        <String fx:value="h7"/>
+                        <String fx:value="color-dark-3"/>
+                        <String fx:value="fw-500"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0"/>
+        <HBox prefHeight="61.0" prefWidth="708.0" spacing="5.0">
+            <children>
+                <Label styleClass="fw-500" text="Vendor:"/>
+                <VBox minWidth="200.0" prefHeight="59.0" spacing="3.0">
+                    <children>
+                        <Label fx:id="supplierName" text="supplier name"/>
+                        <Label fx:id="supplierAddress" text="Address"/>
+                        <Label fx:id="supplierPhone" text="phone number"/>
+                    </children>
+                </VBox>
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                <Label styleClass="fw-500" text="Ship To: "/>
+                <VBox layoutX="60.0" layoutY="10.0" minWidth="200.0" prefHeight="59.0" spacing="3.0">
+                    <children>
+                        <Label fx:id="hospitalName" text="hospital name"/>
+                        <Label fx:id="hospitalAddress" text="Address"/>
+                        <Label fx:id="hospitalPhone" text="Phone Number"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0"/>
+        <TableView fx:id="purchaseOrderTableView" prefHeight="413.0" prefWidth="708.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="itemCode" prefWidth="75.0" text="Item #"/>
+                <TableColumn fx:id="drugName" prefWidth="75.0" text="Name"/>
+                <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity"/>
+                <TableColumn fx:id="unitCost" prefWidth="75.0" text="Unit Cost"/>
+                <TableColumn fx:id="total" prefWidth="75.0" text="Total"/>
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="708.0" spacing="5.0">
+            <children>
+                <Label text="Order Total"/>
+                <Label fx:id="orderTotal" layoutX="684.0" layoutY="26.0" text="Ksh 200">
+                    <styleClass>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="h6"/>
+                    </styleClass>
+                </Label>
+            </children>
+            <VBox.margin>
+                <Insets bottom="10.0"/>
+            </VBox.margin>
+        </HBox>
+        <VBox alignment="CENTER" fillWidth="false" prefHeight="46.0" prefWidth="708.0">
+            <children>
+                <Separator prefHeight="1.0" prefWidth="446.0"/>
+                <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="250.0">
+                    <children>
+                        <Label text="Authorized by"/>
+                        <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                        <Label layoutX="10.0" layoutY="23.0" text="Date"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="708.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onPrint" styleClass="btn-info" text="Print"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

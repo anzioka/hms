@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" prefHeight="500.0" prefWidth="850.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.LabRequestController">
+    <children>
+        <AnchorPane prefHeight="87.0" prefWidth="612.0" styleClass="border-light-3">
+            <VBox.margin>
+                <Insets top="5.0"/>
+            </VBox.margin>
+            <children>
+                <VBox alignment="TOP_CENTER" layoutX="2.0" layoutY="-8.0" prefHeight="87.0" prefWidth="610.0"
+                      spacing="10.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="1.0"
+                      AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-9.0">
+                    <children>
+                        <HBox alignment="TOP_CENTER">
+                            <children>
+                                <Label layoutX="289.0" layoutY="14.0" style="-fx-background-color: color-light-6;"
+                                       text="Lab Request" AnchorPane.topAnchor="-10.0">
+                                    <styleClass>
+                                        <String fx:value="color-unique"/>
+                                        <String fx:value="fw-500"/>
+                                        <String fx:value="h6_5"/>
+                                    </styleClass>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="610.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label layoutX="160.0" layoutY="32.0" text="Sample">
+                                    <styleClass>
+                                        <String fx:value="color-unique"/>
+                                        <String fx:value="fw-500"/>
+                                    </styleClass>
+                                </Label>
+                                <ChoiceBox fx:id="specimenChoiceBox" prefWidth="150.0"/>
+                                <Label text="Test">
+                                    <HBox.margin>
+                                        <Insets left="15.0"/>
+                                    </HBox.margin>
+                                    <styleClass>
+                                        <String fx:value="color-unique"/>
+                                        <String fx:value="fw-500"/>
+                                    </styleClass>
+                                </Label>
+                                <TextField fx:id="searchField"/>
+                                <Button mnemonicParsing="false" onAction="#onSendRequest" prefHeight="26.0"
+                                        styleClass="btn-info-outline" text="Send Request">
+                                    <tooltip>
+                                        <Tooltip text="Send lab request. This action cannot be undone"/>
+                                    </tooltip>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <TableView fx:id="tableView" prefHeight="295.0" prefWidth="612.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="date" prefWidth="75.0" text="Date"/>
+                <TableColumn fx:id="sample" prefWidth="75.0" text="Sample"/>
+                <TableColumn fx:id="testName" minWidth="3.0" prefWidth="85.0" text="Test"/>
+                <TableColumn fx:id="cost" prefWidth="75.0" text="Cost"/>
+                <TableColumn fx:id="status" prefWidth="75.0" text="Status"/>
+                <TableColumn fx:id="options" minWidth="3.0" prefWidth="85.0" text="Options"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

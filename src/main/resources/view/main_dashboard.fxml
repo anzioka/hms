@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="596.0" prefWidth="680.0" stylesheets="@../css/main.css"
+            xmlns="http://javafx.com/javafx/8" fx:controller="main.java.controller.DashboardController">
+    <children>
+        <VBox alignment="CENTER" layoutX="208.0" layoutY="237.0" prefWidth="600.0" styleClass="bg-lighten6"
+              AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0"
+              AnchorPane.topAnchor="5.0">
+            <children>
+                <HBox>
+                    <children>
+                        <Label styleClass="home-screen-heading" text="System Analytics"/>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+                <HBox alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="365.0" spacing="5.0">
+                    <children>
+                        <DatePicker fx:id="fromDate" prefHeight="27.0" prefWidth="124.0" promptText="dd-mm-yyyy"/>
+                        <Label style="-fx-text-fill: #455a64;" text="To"/>
+                        <DatePicker fx:id="toDate" prefHeight="27.0" prefWidth="125.0" promptText="dd-mm-yyyy"/>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" fillHeight="false" prefHeight="350.0" prefWidth="658.0" spacing="20.0"
+                      styleClass="bg-white">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="175.0" styleClass="btn-info">
+                            <children>
+                                <Label fx:id="todayVisits" style="-fx-font-size: 32px;" styleClass="header-dark-bg"
+                                       text="20" wrapText="true">
+                                    <font>
+                                        <Font size="18.0"/>
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-font-size: 12px;"
+                                       styleClass="header-dark-bg" text="Today's Visits" wrapText="true"/>
+                            </children>
+                        </VBox>
+                        <VBox alignment="BOTTOM_RIGHT" prefHeight="400.0" prefWidth="400.0" spacing="5.0">
+                            <children>
+                                <LineChart fx:id="lineChart" VBox.vgrow="ALWAYS">
+                                    <xAxis>
+                                        <CategoryAxis fx:id="categoryAxis" side="BOTTOM"/>
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis fx:id="numberAxis" side="LEFT"/>
+                                    </yAxis>
+                                </LineChart>
+                                <Label fx:id="totalVisits" styleClass="label-dark" text="30"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

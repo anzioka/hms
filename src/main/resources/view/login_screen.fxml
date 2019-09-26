@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="401.0"
+      spacing="5.0"
+      style="-fx-background-color: #455a64; -fx-border-color: #455a64; -fx-border-width: 3px;" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.LoginController">
+    <children>
+        <Label alignment="CENTER" prefWidth="200.0" style="-fx-text-fill: #60B0F4;" text="QUANTUM">
+            <styleClass>
+                <String fx:value="h2"/>
+                <String fx:value="fw-500"/>
+            </styleClass>
+        </Label>
+        <Label style="-fx-text-fill: #60B0F4;" styleClass="h6" text="HOSPITAL MANAGEMENT SYSTEM"/>
+        <Separator prefWidth="267.0"/>
+        <Pane prefHeight="20.0" prefWidth="200.0"/>
+        <Label alignment="CENTER" prefWidth="200.0" text="Login to get started">
+            <styleClass>
+                <String fx:value="color-white"/>
+                <String fx:value="h6"/>
+            </styleClass>
+        </Label>
+        <Pane prefHeight="10.0" prefWidth="200.0"/>
+        <TextField fx:id="userName" onAction="#onLogin" prefHeight="30.0" prefWidth="200.0" promptText="Login Name"/>
+        <Pane prefHeight="1.0" prefWidth="200.0"/>
+        <PasswordField fx:id="userPassword" onAction="#onLogin" prefHeight="30.0" prefWidth="200.0"
+                       promptText="Password"/>
+        <Pane prefHeight="33.0" prefWidth="200.0"/>
+        <Button fx:id="loginButton" disable="true" mnemonicParsing="false" onAction="#onLogin" prefHeight="27.0"
+                prefWidth="200.0" styleClass="btn-success" text="Login"/>
+    </children>
+</VBox>

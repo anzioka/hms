@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="530.0" prefWidth="800.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.EditPurchaseOrderController">
+    <children>
+        <Label styleClass="modal-title" text="Create Purchase Order"/>
+        <Separator prefWidth="200.0"/>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="736.0" spacing="5.0">
+                    <children>
+                        <Label text="Select Supplier">
+                            <styleClass>
+                                <String fx:value="color-unique"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="supplierChoiceBox" prefHeight="27.0" prefWidth="175.0"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="orderNumLabel" text="Order No.">
+                            <styleClass>
+                                <String fx:value="color-unique"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="726.0" spacing="5.0">
+                    <children>
+                        <Label text="Medicine">
+                            <styleClass>
+                                <String fx:value="color-dark-2"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="medicine" prefHeight="27.0" prefWidth="215.0"/>
+                        <Pane HBox.hgrow="ALWAYS"/>
+                        <Label text="Quantity">
+                            <styleClass>
+                                <String fx:value="color-dark-2"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="quantity" prefHeight="27.0" prefWidth="129.0"/>
+                        <Pane prefHeight="59.0" HBox.hgrow="ALWAYS"/>
+                        <Label layoutX="341.0" layoutY="31.0" text="Unit Cost">
+                            <styleClass>
+                                <String fx:value="color-dark-2"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="unitCost" layoutX="380.0" layoutY="26.0" onAction="#onAddOrder"
+                                   prefHeight="27.0" prefWidth="134.0"/>
+                        <Button mnemonicParsing="false" onAction="#onAddOrder" styleClass="btn-info-outline"
+                                text="Add"/>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+                <TableView fx:id="purchaseOrderTableView" prefHeight="260.0" prefWidth="726.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="nameCol" prefWidth="75.0" text="Medicine Name"/>
+                        <TableColumn fx:id="storeQtyCol" prefWidth="75.0" text="Store Qty"/>
+                        <TableColumn fx:id="shopQtyCol" prefWidth="75.0" text="Shop Qty"/>
+                        <TableColumn fx:id="quantityCol" prefWidth="75.0" text="Quantity"/>
+                        <TableColumn fx:id="unitCostCol" prefWidth="75.0" text="Unit Cost"/>
+                        <TableColumn fx:id="totalCostCol" prefWidth="75.0" text="Total Cost"/>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="758.0" spacing="10.0">
+                    <children>
+                        <Label styleClass="h6" text="Order Total"/>
+                        <Label fx:id="totalLabel" layoutX="734.0" layoutY="22.0" text="Ksh. 0">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-info-dark"/>
+                                <String fx:value="h5"/>
+                            </styleClass>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="726.0" spacing="20.0"
+                      styleClass="bg-lighten6">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#onClose" styleClass="btn-warning" text="Close"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                        <Button layoutX="174.0" layoutY="21.0" mnemonicParsing="false" onAction="#onDeleteItem"
+                                styleClass="btn-primary" text="Delete Item"/>
+                        <Button layoutX="253.0" layoutY="21.0" mnemonicParsing="false" onAction="#onSaveOrder"
+                                styleClass="btn-success" text="Save Order"/>
+                    </children>
+                </HBox>
+            </children>
+            <styleClass>
+                <String fx:value="border-grey-dark"/>
+                <String fx:value="padding-5"/>
+            </styleClass>
+        </VBox>
+    </children>
+</VBox>

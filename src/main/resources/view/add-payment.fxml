@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" prefHeight="520.0" prefWidth="852.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.AddPaymentController">
+    <children>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="136.0" prefWidth="637.0"
+              spacing="5.0">
+            <styleClass>
+                <String fx:value="border-light-3"/>
+                <String fx:value="container-padded"/>
+            </styleClass>
+            <children>
+                <HBox alignment="CENTER" prefHeight="73.0" prefWidth="625.0" spacing="25.0">
+                    <children>
+                        <GridPane alignment="CENTER_LEFT">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="94.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0"
+                                                   prefWidth="106.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Label text="Patient Name ">
+                                    <styleClass>
+                                        <String fx:value="fw-500"/>
+                                        <String fx:value="color-dark-2"/>
+                                    </styleClass>
+                                </Label>
+                                <Label fx:id="patientName" text="Label" GridPane.columnIndex="1"/>
+
+                                <Label fx:id="patientTypeLabel" text="Inpatient No." GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500"/>
+                                        <String fx:value="color-dark-2"/>
+                                    </styleClass>
+                                </Label>
+                                <Label fx:id="patientNo" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            </children>
+                        </GridPane>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0"
+                                                   prefWidth="116.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="84.0"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+                            <children>
+                                <Label text="Payment Mode">
+                                    <styleClass>
+                                        <String fx:value="fw-500"/>
+                                        <String fx:value="color-dark-2"/>
+                                    </styleClass>
+                                </Label>
+                                <Label fx:id="paymentMode" text="Label" GridPane.columnIndex="1"/>
+                                <Label text="Outstanding Amt" GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500"/>
+                                        <String fx:value="color-dark-2"/>
+                                    </styleClass>
+                                </Label>
+                                <Label fx:id="outstandingAmt" text="Label" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="1">
+                                    <styleClass>
+                                        <String fx:value="fw-500"/>
+                                        <String fx:value="h6_5"/>
+                                    </styleClass>
+                                </Label>
+                            </children>
+                        </GridPane>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0"/>
+                <HBox alignment="CENTER" prefHeight="29.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Label text="Amount Received">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <TextField onAction="#onSavePayment" fx:id="editAmount"/>
+                        <Label text="Means">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="paymentMeansChoiceBox" prefWidth="150.0"/>
+                        <Label text="Account">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="accountChoiceBox" layoutX="377.0" layoutY="16.0" prefWidth="150.0"/>
+                        <Button mnemonicParsing="false" onAction="#onSavePayment" styleClass="btn-info-outline"
+                                text="Save Payment"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <TableView fx:id="tableView" prefHeight="266.0" prefWidth="637.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="description" prefWidth="75.0" text="Description"/>
+                <TableColumn fx:id="category" prefWidth="75.0" text="Category"/>
+                <TableColumn fx:id="outstandingAmtCol" prefWidth="75.0" text="Amount Due"/>
+                <TableColumn fx:id="amountReceivedCol" prefWidth="75.0" text="Allocated"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

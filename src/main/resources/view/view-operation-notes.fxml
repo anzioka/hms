@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="428.0" prefWidth="714.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.ViewOperationController">
+    <children>
+        <Label styleClass="modal-title" text="Operation Notes" underline="true"/>
+        <HBox alignment="CENTER" prefHeight="31.0" prefWidth="605.0" spacing="5.0">
+            <children>
+                <Label text="Operation">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="h6_5"/>
+                    </styleClass>
+                </Label>
+                <Label fx:id="operationName" layoutX="296.0" layoutY="20.0" text="Label">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="h6_5"/>
+                        <String fx:value="fw-500"/>
+                    </styleClass>
+                </Label>
+                <Label layoutX="315.0" layoutY="20.0" text="Date / Time">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="h6_5"/>
+                    </styleClass>
+                    <padding>
+                        <Insets left="30.0"/>
+                    </padding>
+                </Label>
+                <Label fx:id="date" layoutX="335.0" layoutY="20.0" text="Label">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="h6_5"/>
+                        <String fx:value="fw-500"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0"/>
+        <HBox prefHeight="79.0" prefWidth="704.0">
+            <children>
+                <GridPane prefHeight="86.0" prefWidth="278.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Surgeon">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <Label text="Indication" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+
+                        <Label text="Incision" GridPane.rowIndex="2">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+
+                        <Label fx:id="indication" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label fx:id="surgeon" text="Label" GridPane.columnIndex="1"/>
+                        <Label fx:id="incision" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    </children>
+                </GridPane>
+                <Pane prefHeight="79.0" prefWidth="201.0" HBox.hgrow="ALWAYS"/>
+                <GridPane prefHeight="79.0" prefWidth="351.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="113.0" minWidth="10.0" prefWidth="113.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="196.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Anaesthetist">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <Label text="Anaesthesia" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+                        <Label text="Assistant(s) " GridPane.rowIndex="2">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-dark-2"/>
+                            </styleClass>
+                        </Label>
+
+                        <Label fx:id="anaesthetist" text="Label" GridPane.columnIndex="1"/>
+                        <Label fx:id="anaesthesia" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label fx:id="assistants" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    </children>
+                </GridPane>
+            </children>
+        </HBox>
+        <VBox prefHeight="235.0" prefWidth="704.0" spacing="5.0" style="-fx-background-color: #ffffff;"
+              VBox.vgrow="ALWAYS">
+            <children>
+                <Label text="Notes">
+                    <styleClass>
+                        <String fx:value="color-accent"/>
+                        <String fx:value="fw-500"/>
+                    </styleClass>
+                </Label>
+                <Label fx:id="notes" lineSpacing="4.0" text="labe" wrapText="true"/>
+            </children>
+            <styleClass>
+                <String fx:value="border-light-2"/>
+                <String fx:value="container-padded"/>
+            </styleClass>
+        </VBox>
+        <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="704.0">
+            <children>
+                <Button onAction="#onClose" mnemonicParsing="false" styleClass="btn-warning" text="Close"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

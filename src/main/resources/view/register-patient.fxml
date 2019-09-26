@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="535.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.EditPatientController">
+    <content>
+        <VBox fx:id="container" alignment="TOP_CENTER" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="600.0" spacing="10.0" styleClass="bg-white">
+                    <children>
+                        <Label styleClass="header" text="Search By:" />
+                        <ChoiceBox fx:id="searchParamChoiceBox" prefWidth="150.0" />
+                        <TextField fx:id="searchParamInput" onAction="#onSearchPatientRecord" />
+                        <Button mnemonicParsing="false" onAction="#onSearchPatientRecord" styleClass="btn-info-outline" text="Search" />
+                    </children>
+                </HBox>
+                <Label style="-fx-font-size: 16px; -fx-font-weight: 900; -fx-text-fill: #2196F3;" text="Registration Form" />
+                <Separator prefWidth="200.0" />
+                <HBox alignment="CENTER" spacing="15.0">
+                    <children>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="312.0" prefWidth="295.0" spacing="5.0" styleClass="bg-lighten5">
+                            <children>
+                                <Label styleClass="heading2-blue-grey" text="Patient Details" />
+                                <GridPane prefHeight="267.0" prefWidth="305.0">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" spacing="1.0">
+                                            <children>
+                                                <Label fx:id="patientNumberLabel" styleClass="header" text="Outpatient No." />
+                                                <Label styleClass="required" text="*" />
+                                            </children>
+                                        </HBox>
+                                        <Label styleClass="header" text="NHIF No." GridPane.rowIndex="7" />
+                                        <TextField fx:id="patientNumber" GridPane.columnIndex="1" />
+                                        <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="surname" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                            <children>
+                                                <RadioButton fx:id="male" mnemonicParsing="false" text="Male" />
+                                                <RadioButton fx:id="female" mnemonicParsing="false" text="Female" />
+                                            </children>
+                                        </HBox>
+                                        <ChoiceBox fx:id="maritalStatus" prefHeight="27.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                        <DatePicker fx:id="dateOfBirth" prefHeight="27.0" prefWidth="264.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                        <TextField fx:id="age" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                        <TextField fx:id="NHIFNumber" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                        <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="41.0" spacing="1.0" GridPane.rowIndex="3">
+                                            <children>
+                                                <Label styleClass="header" text="Sex" />
+                                                <Label styleClass="required" text="*" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.rowIndex="1">
+                                            <children>
+                                                <Label styleClass="header" text="First Name" />
+                                                <Label styleClass="required" text="*" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.rowIndex="2">
+                                            <children>
+                                                <Label styleClass="header" text="Last Name" />
+                                                <Label styleClass="required" text="*" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.rowIndex="4">
+                                            <children>
+                                                <Label styleClass="header" text="Marital Status" />
+                                                <Label styleClass="required" text="*" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.rowIndex="5">
+                                            <children>
+                                                <Label styleClass="header" text="Date of Birth" />
+                                                <Label styleClass="required" text="*" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.rowIndex="6">
+                                            <children>
+                                                <Label styleClass="header" text="Age" />
+                                                <Label styleClass="required" text="*" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="98.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="185.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                </GridPane>
+                            </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox alignment="TOP_CENTER" prefHeight="312.0" prefWidth="295.0" spacing="5.0" styleClass="bg-lighten5">
+                            <children>
+                                <VBox alignment="TOP_CENTER" fillWidth="false" spacing="5.0">
+                                    <children>
+                                        <Label styleClass="heading2-blue-grey" text="Contact Information" />
+                                        <GridPane prefWidth="279.0">
+                                            <children>
+                                                <TextField fx:id="phoneNumber" GridPane.columnIndex="1" />
+                                                <HBox alignment="CENTER_LEFT" spacing="1.0" GridPane.rowIndex="1">
+                                                    <children>
+                                                        <Label styleClass="header" text="Residence" />
+                                                        <Label styleClass="required" text="*" />
+                                                    </children>
+                                                </HBox>
+                                                <Label styleClass="header" text="Phone No." />
+                                                <TextField fx:id="residence" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.00000762939453" minWidth="10.0" prefWidth="84.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="195.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </children>
+                                </VBox>
+                                <Label styleClass="heading2-blue-grey" text="Next of Kin" />
+                                <GridPane prefHeight="176.0" prefWidth="283.0">
+                                    <children>
+                                        <Label styleClass="header" text="First Name" />
+                                        <Label styleClass="header" text="Surname" GridPane.rowIndex="1" />
+                                        <Label styleClass="header" text="R/ship" GridPane.rowIndex="2" />
+                                        <Label styleClass="header" text="Phone No" GridPane.rowIndex="3" />
+                                        <TextField fx:id="nextOfKinFirstName" GridPane.columnIndex="1" />
+                                        <TextField fx:id="nextOfKinSurname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <TextField fx:id="nextOfKinPhoneNumber" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <ChoiceBox fx:id="nextOfKinRelationship" prefHeight="27.0" prefWidth="282.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    </children>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="87.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="334.0" minWidth="10.0" prefWidth="196.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                </GridPane>
+                            </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox prefHeight="312.0" prefWidth="295.0" spacing="5.0" style="-fx-background-color: #E0F2F1;" styleClass="bg-lighten4">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="159.0" prefWidth="293.0" spacing="5.0">
+                                    <children>
+                                        <Label styleClass="heading2-blue" text="Payment" />
+                                        <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="305.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="170.0">
+                                                    <children>
+                                                        <Label prefHeight="16.0" styleClass="header" text="Payment Mode" />
+                                                        <Label styleClass="required" text="*" />
+                                                    </children>
+                                                </HBox>
+                                                <ChoiceBox fx:id="paymentMode" prefHeight="27.0" prefWidth="209.0" />
+                                            </children>
+                                        </HBox>
+                                        <GridPane fx:id="insuranceInfo" prefHeight="79.0" prefWidth="283.0" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <ChoiceBox fx:id="insuranceChoiceBox" prefHeight="27.0" prefWidth="196.0" GridPane.columnIndex="1" />
+                                                <TextField fx:id="insuranceId" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                    <children>
+                                                        <Label styleClass="header" text="Insurance Co." />
+                                                        <Label styleClass="required" text="*" />
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.rowIndex="1">
+                                                    <children>
+                                                        <Label styleClass="header" text="Insurance No:" />
+                                                        <Label styleClass="required" text="*" />
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                            <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="116.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="197.0" minWidth="10.0" prefWidth="156.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                        </GridPane>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Separator prefWidth="200.0" />
+                <HBox alignment="CENTER" prefHeight="44.0" prefWidth="788.0" spacing="20.0">
+                    <children>
+                        <Button fx:id="queueButton" mnemonicParsing="false" onAction="#addPatientToQueue" styleClass="btn-success" text="Queue Patient" />
+                        <Button fx:id="admitButton" mnemonicParsing="false" onAction="#admitPatient" styleClass="btn-success" text="Admit" />
+                  <Button fx:id="appointmentBtn" mnemonicParsing="false" onAction="#onCreateAppointment" styleClass="btn-success" text="Book Appointment" />
+                        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#onRegisterPatient" prefWidth="88.0" styleClass="btn-success" text="Register " />
+                        <Button mnemonicParsing="false" onAction="#onClear" styleClass="btn-default" text="Reset Form" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>

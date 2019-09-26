@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="650.0" style="-fx-background-color: white;" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.NotificationsController">
+   <content>
+      <VBox fx:id="container" spacing="10.0" style="-fx-background-color: white;" />
+   </content>
+   <styleClass>
+      <String fx:value="scene" />
+      <String fx:value="container-padded" />
+   </styleClass>
+</ScrollPane>

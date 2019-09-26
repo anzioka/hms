@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="714.0" spacing="5.0"
+      styleClass="bg-white" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.LabRequestsSummaryController">
+    <children>
+        <Label fx:id="tableTitle" alignment="CENTER" contentDisplay="CENTER" prefWidth="400.0"
+               styleClass="heading2-blue" text="Test Report" wrapText="true"/>
+        <Separator prefWidth="200.0"/>
+        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="doctorCol" prefWidth="75.0" style="-fx-alignment: center-left;"
+                             text="Requesting Doc"/>
+                <TableColumn fx:id="patientName" prefWidth="75.0" style="-fx-alignment: center-left;"
+                             text="Patient Name"/>
+                <TableColumn fx:id="testName" prefWidth="75.0" style="-fx-alignment: center-left;" text="Test Name"/>
+                <TableColumn fx:id="timeRequested" prefWidth="75.0" text="Time Requested"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+        <HBox fx:id="buttonBar" alignment="CENTER_RIGHT">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onPrint" prefWidth="96.0" styleClass="btn-success"
+                        text="Print"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

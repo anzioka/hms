@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="685.0" prefWidth="1104.0" styleClass="scene"
+            stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+            fx:controller="main.java.controller.PatientRegistrationController">
+    <children>
+        <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="58.0" prefWidth="590.0" spacing="5.0" styleClass="bg-lighten3">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/patient_reg.png"/>
+                            </image>
+                        </ImageView>
+                        <Label text="Patient Registration">
+                            <styleClass>
+                                <String fx:value="color-accent"/>
+                                <String fx:value="h4"/>
+                            </styleClass>
+                        </Label>
+                    </children>
+                </HBox>
+                <VBox alignment="TOP_CENTER" spacing="5.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                                 VBox.vgrow="ALWAYS">
+                            <tabs>
+                                <Tab closable="false" text="Patient Queue"/>
+                            </tabs>
+                        </TabPane>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

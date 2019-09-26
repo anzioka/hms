@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" minWidth="-Infinity" prefHeight="468.0" prefWidth="795.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.PurchaseReturnsController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="590.0" spacing="5.0">
+            <children>
+                <Label text="From">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="fw-500"/>
+                    </styleClass>
+                </Label>
+                <DatePicker fx:id="startDate" prefHeight="27.0" prefWidth="150.0" promptText="dd-mm-yyyy"/>
+                <Label layoutX="166.0" layoutY="20.0" text="To">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="fw-500"/>
+                    </styleClass>
+                </Label>
+                <DatePicker fx:id="endDate" layoutX="203.0" layoutY="15.0" prefHeight="27.0" prefWidth="150.0"
+                            promptText="dd-mm-yyyy"/>
+                <Button mnemonicParsing="false" onAction="#getData" styleClass="fw-500" text="Search Records"/>
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="newReturn" mnemonicParsing="false" onAction="#onNewReturn" styleClass="btn-primary-outline"
+                        text="New Return"/>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0"/>
+        <TableView fx:id="purchaseReturnTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="invoice" prefWidth="75.0" text="Invoice No."/>
+                <TableColumn fx:id="returnedBy" prefWidth="75.0" text="Returned By"/>
+                <TableColumn fx:id="supplier" prefWidth="75.0" text="Supplier"/>
+                <TableColumn fx:id="dateReturned" prefWidth="75.0" text="Date Returned"/>
+                <TableColumn fx:id="details" prefWidth="75.0" text="Details"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

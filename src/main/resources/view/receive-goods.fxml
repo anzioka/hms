@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" prefHeight="500.0" prefWidth="780.0" spacing="5.0"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.ReceiveDrugsController">
+    <children>
+        <Label fx:id="dialogTitle" text="Receive Drugs">
+            <styleClass>
+                <String fx:value="h6"/>
+                <String fx:value="modal-title"/>
+            </styleClass>
+        </Label>
+        <HBox minHeight="-Infinity" prefHeight="77.0" prefWidth="645.0" styleClass="bg-lighten6">
+            <children>
+                <GridPane prefWidth="270.0">
+                    <children>
+                        <Label text="Select Supplier">
+                            <styleClass>
+                                <String fx:value="color-dark-4"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="supplierChoiceBox" prefHeight="27.0" prefWidth="190.0"
+                                   GridPane.columnIndex="1"/>
+                        <Label text="Invoice No." GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="color-dark-4"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="invoiceNo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="71.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="175.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                </GridPane>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <GridPane layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="270.0">
+                    <children>
+                        <Label text="Date Delivered">
+                            <styleClass>
+                                <String fx:value="color-dark-4"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <DatePicker fx:id="deliveryDate" promptText="dd-mm-yyyy" GridPane.columnIndex="1"/>
+                        <Label text="Destination" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="color-dark-4"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <ChoiceBox fx:id="pharmacyLocationChoiceBox" prefHeight="27.0" prefWidth="238.0"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="79.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="167.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                </GridPane>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="90.0" prefWidth="720.0" spacing="15.0">
+            <children>
+                <GridPane prefHeight="78.0" prefWidth="204.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="59.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="118.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="searchField" GridPane.columnIndex="1"/>
+                        <Label text="Medicine">
+                            <styleClass>
+                                <String fx:value="color-accent"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <Label text="Quantity" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-accent"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="quantity" prefHeight="27.0" prefWidth="135.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                <GridPane prefHeight="68.0" prefWidth="221.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="74.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.0" minWidth="10.0" prefWidth="120.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Batch No.">
+                            <styleClass>
+                                <String fx:value="color-accent"/>
+                                <String fx:value="fw-500"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="batchNo" prefHeight="27.0" prefWidth="147.0" GridPane.columnIndex="1"/>
+                        <Label text="Expiry Date" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-accent"/>
+                            </styleClass>
+                        </Label>
+                        <DatePicker fx:id="expiryDate" promptText="dd-mm-yyyy" GridPane.columnIndex="1"
+                                    GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS"/>
+                <GridPane layoutX="186.0" layoutY="16.0" prefHeight="68.0" prefWidth="225.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="85.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="113.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Buying Price">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-accent"/>
+                            </styleClass>
+                        </Label>
+                        <Label text="Discount" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="color-accent"/>
+                            </styleClass>
+                        </Label>
+                        <TextField fx:id="buyingPrice" prefWidth="150.0" GridPane.columnIndex="1"/>
+                        <TextField fx:id="discount" onAction="#onAddToPurchase" prefWidth="150.0"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+                <Button mnemonicParsing="false" onAction="#onAddToPurchase" styleClass="btn-info-outline" text="Add"/>
+            </children>
+        </HBox>
+        <TableView fx:id="purchaseTableView" prefHeight="309.0" prefWidth="810.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="name" prefWidth="75.0" text="Name"/>
+                <TableColumn fx:id="batchNoCol" prefWidth="75.0" text="Batch No."/>
+                <TableColumn fx:id="expiryDateCol" prefWidth="75.0" text="Expiry Date"/>
+                <TableColumn fx:id="quantityAddedCol" prefWidth="75.0" text="Qty Received"/>
+                <TableColumn fx:id="quantityAfterColumn" prefWidth="75.0" text="Qty After Add"/>
+                <TableColumn fx:id="buyingPriceCol" prefWidth="75.0" text="Buying Price"/>
+                <TableColumn fx:id="discountCol" prefWidth="75.0" text="Discount"/>
+                <TableColumn fx:id="totalCol" prefWidth="75.0" text="Total"/>
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="793.0" spacing="10.0">
+            <children>
+                <Label text="Total Cost">
+                    <styleClass>
+                        <String fx:value="h6"/>
+                    </styleClass>
+                </Label>
+                <Label fx:id="totalCostLabel" layoutX="769.0" layoutY="26.0" text="Ksh 0">
+                    <styleClass>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="h5"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0"/>
+        <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefWidth="720.0" spacing="20.0" styleClass="bg-lighten6">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onClose" styleClass="btn-warning" text="Close"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button mnemonicParsing="false" onAction="#onVoidItem" styleClass="btn-info-outline" text="Void Item"/>
+                <Button mnemonicParsing="false" onAction="#onSave" styleClass="btn-success" text="Save"/>
+            </children>
+        </HBox>
+    </children>
+    <styleClass>
+        <String fx:value="scene"/>
+    </styleClass>
+</VBox>

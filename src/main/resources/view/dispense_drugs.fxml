@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="500.0" prefWidth="720.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.DispenseDrugsController">
+    <children>
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="70.0" prefWidth="200.0"
+              spacing="10.0" styleClass="bg-normal">
+            <children>
+                <GridPane HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="96.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="123.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="patientNoLabel" text="Outpatient No."/>
+                        <Label text="Sex" GridPane.rowIndex="1"/>
+                        <Label fx:id="patientNo" styleClass="fw-500" text="Label" GridPane.columnIndex="1"/>
+                        <Label fx:id="sex" styleClass="fw-500" text="Label" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+                <GridPane HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="75.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="144.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="First Name"/>
+                        <Label text="Last Name" GridPane.rowIndex="1"/>
+                        <Label fx:id="firstName" prefHeight="17.0" styleClass="fw-500" text="Label"
+                               GridPane.columnIndex="1"/>
+                        <Label fx:id="lastName" styleClass="fw-500" text="Label" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+                <GridPane HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="45.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="191.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="DOB"/>
+                        <Label text="Age" GridPane.rowIndex="1"/>
+                        <Label fx:id="dateOfBirth" styleClass="fw-500" text="Label" GridPane.columnIndex="1"/>
+                        <Label fx:id="age" styleClass="fw-500" text="Label" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                    </children>
+                </GridPane>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="53.0" prefWidth="708.0"
+              spacing="5.0">
+            <children>
+                <Label styleClass="h6_5" text="Date Requested : "/>
+                <Label fx:id="dateCreated" styleClass="h6_5" text="Label"/>
+                <Pane layoutX="153.0" layoutY="10.0" HBox.hgrow="ALWAYS"/>
+                <Label fx:id="receiptNum" text="Receipt No.">
+                    <styleClass>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="h6_5"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0"/>
+        <TableView fx:id="tableView" prefHeight="210.0" prefWidth="588.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="nameCol" minWidth="100.0" prefWidth="-1.0" text="Name"/>
+                <TableColumn fx:id="formulation" prefWidth="75.0" text="Formulation"/>
+                <TableColumn fx:id="dosageCol" minWidth="100.0" prefWidth="-1.0" text="Dosage"/>
+                <TableColumn fx:id="qty" minWidth="100.0" prefWidth="-1.0" text="Quantity"/>
+                <TableColumn fx:id="qtyAvailable" prefWidth="131.0" text="Qty Available"/>
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="710.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onDispenseDrugs" styleClass="btn-primary" text="Dispense"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

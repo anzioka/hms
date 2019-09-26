@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<AnchorPane styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.DiagnosisController">
+    <children>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefWidth="600.0" styleClass="border-light-3">
+                    <children>
+                        <VBox alignment="TOP_CENTER" layoutX="200.0" layoutY="-63.0" prefWidth="100.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="-11.0">
+                            <children>
+                                <Label style="-fx-background-color: #f5f5f5;" text="New Diagnosis">
+                                    <styleClass>
+                                        <String fx:value="fw-500" />
+                                        <String fx:value="color-unique" />
+                                    </styleClass>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="75.0" prefWidth="600.0" spacing="5.0">
+                                    <children>
+                                        <Label text="Diagnosis">
+                                            <styleClass>
+                                                <String fx:value="color-dark-2" />
+                                                <String fx:value="fw-500" />
+                                            </styleClass>
+                                        </Label>
+                                        <TextField fx:id="editField" onAction="#onAddDiagnosis" HBox.hgrow="ALWAYS" />
+                                        <Button mnemonicParsing="false" onAction="#onAddDiagnosis" styleClass="btn-info-outline" text="Save" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                </AnchorPane>
+                <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="date" prefWidth="122.0" text="Date" />
+                        <TableColumn fx:id="diagnosis" prefWidth="345.0" text="Diagnosis" />
+                        <TableColumn fx:id="option" prefWidth="132.0" text="Options" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

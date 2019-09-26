@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="container" prefHeight="461.0" prefWidth="825.0" spacing="3.0" styleClass="scene" stylesheets="@../css/main.css"
+       xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.AllRadiologyTestResults">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="590.0" spacing="5.0">
+         <children>
+            <Label text="From" />
+            <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy" />
+            <Label layoutX="10.0" layoutY="18.0" text="To">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></Label>
+            <DatePicker fx:id="endDate" layoutX="74.0" layoutY="13.0" prefWidth="153.0" promptText="dd-mm-yyyy" />
+            <Button onAction="#onSearch" mnemonicParsing="false" styleClass="btn-info" text="Search">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></Button>
+            <Pane prefHeight="31.0" HBox.hgrow="ALWAYS" />
+            <Label text="Search Patient" />
+            <TextField fx:id="patientSearchField" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="date" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="doctorName" prefWidth="75.0" text="Doctor" />
+          <TableColumn fx:id="patientName" prefWidth="75.0" text="Patient Name" />
+            <TableColumn fx:id="patientCategory" prefWidth="75.0" text="Patient Category" />
+            <TableColumn fx:id="testCategory" prefWidth="75.0" text="Radiology Category" />
+            <TableColumn fx:id="testDescription" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="result" prefWidth="75.0" text="Result" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</VBox>

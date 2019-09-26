@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="305.0" prefWidth="350.0" spacing="20.0"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.CreateTransferRequestController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="350.0" styleClass="bg-normal">
+            <children>
+                <Label text="Drug Transfer Request"/>
+            </children>
+        </HBox>
+        <VBox spacing="20.0" styleClass="container-padded" VBox.vgrow="ALWAYS">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefWidth="300.0" spacing="5.0">
+                    <children>
+                        <Label styleClass="header" text="Medicine"/>
+                        <TextField fx:id="medicineName" prefHeight="27.0" prefWidth="237.0"/>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefWidth="300.0" spacing="5.0">
+                    <children>
+                        <Label styleClass="header" text="Quantity"/>
+                        <TextField fx:id="quantityRequested" prefHeight="27.0" prefWidth="117.0"/>
+                    </children>
+                </HBox>
+                <Pane prefHeight="75.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+                <HBox alignment="CENTER_RIGHT" prefWidth="300.0" spacing="10.0">
+                    <children>
+                        <Button onAction="#onClose" mnemonicParsing="false" styleClass="btn-default" text="Cancel"/>
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#onSendRequest"
+                                styleClass="btn-info" text="Send Request"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

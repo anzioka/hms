@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="518.0" prefWidth="703.0" styleClass="bg-lighten6"
+            stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+            fx:controller="main.java.controller.ProceduresController">
+    <children>
+        <VBox alignment="CENTER" fillWidth="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0"
+              prefWidth="610.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox prefWidth="800.0" spacing="5.0" styleClass="bg-lighten6" VBox.vgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="610.0" spacing="5.0"
+                              styleClass="bg-lighten5">
+                            <children>
+                                <Button minWidth="65.0" mnemonicParsing="false" onAction="#onUploadFile"
+                                        prefWidth="96.0" styleClass="btn-info" text="Upload"/>
+                                <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                                <Label styleClass="header" text="Search"/>
+                                <TextField fx:id="filter"/>
+                            </children>
+                        </HBox>
+                        <TableView fx:id="procedureTableView" prefHeight="399.0" prefWidth="610.0" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="nameCol" prefWidth="120.0" text="Name"/>
+                                <TableColumn fx:id="costCol" prefWidth="376.0" text="Cost (Ksh)"/>
+                                <TableColumn fx:id="optionsCol" prefWidth="103.0" text="Options"/>
+                            </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="610.0" spacing="10.0"
+                              styleClass="bg-lighten5">
+                            <children>
+                                <TextField fx:id="name" onAction="#onSaveProcedure" prefHeight="27.0" prefWidth="213.0"
+                                           promptText="Procedure Name"/>
+                                <TextField fx:id="cost" onAction="#onSaveProcedure" prefHeight="27.0" prefWidth="145.0"
+                                           promptText="Cost (Ksh)"/>
+                                <Button minWidth="65.0" mnemonicParsing="false" onAction="#onSaveProcedure"
+                                        prefWidth="96.0" styleClass="btn-success" text="Save"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

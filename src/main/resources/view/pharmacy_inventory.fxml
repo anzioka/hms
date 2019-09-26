@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="536.0" prefWidth="620.0" stylesheets="@../css/main.css"
+            xmlns="http://javafx.com/javafx/8" fx:controller="main.java.controller.PharmacyInventoryController">
+    <children>
+        <VBox alignment="TOP_CENTER" fillWidth="false" spacing="5.0" styleClass="bg-lighten6"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="600.0" spacing="10.0"
+                      styleClass="bg-lighten5">
+                    <children>
+                        <Button fx:id="addMedicineBtn" mnemonicParsing="false" onAction="#onAddMedicine"
+                                styleClass="btn-default" text="New Medicine"/>
+                        <Button mnemonicParsing="false" onAction="#onNewRefill" styleClass="btn-default"
+                                text="Transfer Request"/>
+                        <Pane prefHeight="43.0" prefWidth="20.0" HBox.hgrow="ALWAYS"/>
+                        <Label styleClass="header-light-bg" text="Search"/>
+                        <TextField fx:id="medicineFilter"/>
+                    </children>
+                </HBox>
+                <TableView fx:id="medicineTableView" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="nameCol" editable="false" prefWidth="225.0" text="Medicine Name"/>
+                        <TableColumn fx:id="quantityCol" prefWidth="184.0" text="Qty in Pharmacy"/>
+                        <TableColumn fx:id="sellingPrice" prefWidth="112.0" text="Selling Price"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

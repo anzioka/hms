@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="410.0" prefWidth="789.0" styleClass="scene"
+            stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+            fx:controller="main.java.controller.InpatientMiscellaneousCharges">
+    <children>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+              prefWidth="600.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefWidth="200.0" styleClass="border-light-3">
+                    <children>
+                        <VBox alignment="TOP_CENTER" layoutX="6.0" layoutY="-17.0" prefWidth="100.0"
+                              AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0"
+                              AnchorPane.topAnchor="-11.0">
+                            <children>
+                                <Label style="-fx-background-color: color-light-6;" text="New Charge">
+                                    <styleClass>
+                                        <String fx:value="color-unique"/>
+                                        <String fx:value="fw-500"/>
+                                        <String fx:value="h6_5"/>
+                                    </styleClass>
+                                </Label>
+                                <HBox alignment="CENTER" prefHeight="75.0" prefWidth="711.0" spacing="5.0">
+                                    <children>
+                                        <Label text="Date">
+                                            <styleClass>
+                                                <String fx:value="fw-500"/>
+                                                <String fx:value="color-dark-3"/>
+                                            </styleClass>
+                                        </Label>
+                                        <DatePicker fx:id="datePicker" prefHeight="27.0" prefWidth="160.0"
+                                                    promptText="dd-mm-yyyy"/>
+                                        <Label text="Description">
+                                            <styleClass>
+                                                <String fx:value="fw-500"/>
+                                                <String fx:value="color-dark-3"/>
+                                            </styleClass>
+                                            <HBox.margin>
+                                                <Insets left="20.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="editDescription" maxWidth="300.0" prefHeight="27.0"
+                                                   prefWidth="200.0" HBox.hgrow="ALWAYS"/>
+                                        <Label text="Amount">
+                                            <styleClass>
+                                                <String fx:value="fw-500"/>
+                                                <String fx:value="color-dark-3"/>
+                                            </styleClass>
+                                            <HBox.margin>
+                                                <Insets left="20.0"/>
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="editAmount" onAction="#onAddToBill" prefHeight="27.0"
+                                                   prefWidth="87.0"/>
+                                        <Button mnemonicParsing="false" onAction="#onAddToBill"
+                                                styleClass="btn-info-outline" text="Save Charge"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="5.0"/>
+                    </VBox.margin>
+                </AnchorPane>
+                <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="date" prefWidth="75.0" text="Date"/>
+                        <TableColumn fx:id="description" prefWidth="75.0" text="Description"/>
+                        <TableColumn fx:id="amount" prefWidth="75.0" text="Amount"/>
+                        <TableColumn fx:id="options" prefWidth="75.0" text="Options"/>
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

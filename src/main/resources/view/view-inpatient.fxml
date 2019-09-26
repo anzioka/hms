@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<VBox fx:id="container" alignment="TOP_CENTER" prefHeight="479.0" prefWidth="782.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.ViewInpatientController">
+    <children>
+        <HBox maxHeight="-Infinity" minHeight="-Infinity" prefWidth="704.0">
+            <children>
+                <GridPane HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="fw-500" text="Inpatient No." />
+                        <Label styleClass="fw-500" text="Sex" GridPane.rowIndex="1" />
+                        <Label fx:id="inpatientNo" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="sex" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+                <GridPane layoutX="15.0" layoutY="15.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="90.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="fw-500" text="First Name" />
+                        <Label styleClass="fw-500" text="Surname" GridPane.rowIndex="1" />
+                        <Label fx:id="firstName" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="lastName" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+                <GridPane layoutX="215.0" layoutY="15.0" HBox.hgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label styleClass="fw-500" text="DoB" />
+                        <Label styleClass="fw-500" text="Age" GridPane.rowIndex="1" />
+                        <Label fx:id="dateOfBirth" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="age" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+            </children>
+            <styleClass>
+                <String fx:value="bg-normal" />
+                <String fx:value="container-padded" />
+            </styleClass>
+        </HBox>
+        <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab closable="false" text="Control Panel">
+                    <content>
+                        <FlowPane fx:id="controlPanel" hgap="20.0" vgap="20.0">
+                            <children>
+                                <Button fx:id="admissionDetails" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Admission Details" />
+                                <Button fx:id="admissionHistory" layoutX="425.0" layoutY="111.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Admission History" />
+                                <Button fx:id="allergies" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Allergies" />
+                                <Button fx:id="vitalsHistory" layoutX="565.0" layoutY="159.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Vitals " />
+                                <Button fx:id="clinicalSummary" layoutX="610.0" layoutY="111.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Clinical Summary" />
+                                <Button fx:id="diagnosis" layoutY="62.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Diagnosis" />
+                                <Button fx:id="labRequests" layoutX="570.0" layoutY="159.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Lab Requests" />
+                                <Button fx:id="radiologyRequests" layoutY="15.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Radiology Requests" />
+                                <Button fx:id="treatmentChart" layoutY="15.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Treatment Sheet" />
+                                <Button fx:id="procedures" layoutY="62.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Procedures" />
+                                <Button fx:id="operationNotes" layoutY="62.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Theatre Notes" />
+                                <Button fx:id="doctorVisits" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Doctor Visits" />
+                                <Button fx:id="nurseVisits" layoutY="15.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Nurse Visits" />
+                                <Button fx:id="interimBill" layoutY="62.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Interim Bill" />
+                                <Button fx:id="otherCharges" layoutY="109.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Miscellaneous Charges" />
+                                <Button fx:id="NHIFRebate" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="NHIF Rebate" />
+                                <Button fx:id="dischargePatient" layoutY="15.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Discharge Patient" />
+                                <Button fx:id="dischargeSummary" layoutY="15.0" mnemonicParsing="false" prefWidth="165.0" styleClass="btn-info-outline" text="Discharge Summary" />
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" top="5.0" />
+                            </padding>
+                        </FlowPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

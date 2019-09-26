@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="700.0" spacing="5.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.EditUserController">
+    <children>
+        <SplitPane dividerPositions="0.4879310344827586" prefHeight="405.0" prefWidth="695.0" styleClass="container-padded" VBox.vgrow="ALWAYS">
+            <items>
+                <VBox alignment="TOP_CENTER" prefHeight="452.0" prefWidth="207.0" spacing="5.0" styleClass="container-padded">
+                    <children>
+                        <Label style="-fx-font-size: 14px;" text="User Details">
+                            <styleClass>
+                                <String fx:value="color-blue" />
+                                <String fx:value="fw-500" />
+                            </styleClass>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                        <GridPane prefHeight="270.0" prefWidth="318.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="91.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.0" minWidth="10.0" prefWidth="227.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label text="User No." wrapText="true">
+                                            <styleClass>
+                                                <String fx:value="color-dark" />
+                                                <String fx:value="fw-500" />
+                                            </styleClass>
+                                        </Label>
+                                        <Label styleClass="required" text="*" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="userCode" editable="false" GridPane.columnIndex="1" />
+
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label text="First Name" wrapText="true">
+                                            <styleClass>
+                                                <String fx:value="color-dark" />
+                                                <String fx:value="fw-500" />
+                                            </styleClass>
+                                        </Label>
+                                        <Label styleClass="required" text="*" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="firstName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                    <children>
+                                        <Label text="Last Name" wrapText="true">
+                                            <styleClass>
+                                                <String fx:value="color-dark" />
+                                                <String fx:value="fw-500" />
+                                            </styleClass>
+                                        </Label>
+                                        <Label styleClass="required" text="*" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="lastName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                                <Label text="Category" GridPane.rowIndex="3">
+                                    <styleClass>
+                                        <String fx:value="color-dark" />
+                                        <String fx:value="fw-500" />
+                                    </styleClass>
+                                </Label>
+                                <ChoiceBox fx:id="userCategoryChoiceBox" prefHeight="27.0" prefWidth="339.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                    <children>
+                                        <Label text="Login Name">
+                                            <styleClass>
+                                                <String fx:value="color-dark" />
+                                                <String fx:value="fw-500" />
+                                            </styleClass>
+                                        </Label>
+                                        <Label styleClass="required" text="*" />
+                                    </children>
+                                </HBox>
+                                <TextField fx:id="loginName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="149.0" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+                                    <children>
+                                        <Label text="Password">
+                                            <styleClass>
+                                                <String fx:value="color-dark" />
+                                                <String fx:value="fw-500" />
+                                            </styleClass>
+                                        </Label>
+                                        <Label styleClass="required" text="*" />
+                                    </children>
+                                </HBox>
+                                <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                                    <children>
+                                        <Label prefHeight="32.0" prefWidth="66.0" text="Confirm Password" wrapText="true">
+                                            <styleClass>
+                                                <String fx:value="color-dark" />
+                                                <String fx:value="fw-500" />
+                                            </styleClass>
+                                        </Label>
+                                        <Label styleClass="required" text="*" />
+                                    </children>
+                                </HBox>
+                                <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                            </children>
+                        </GridPane>
+                        <Separator prefWidth="200.0" />
+                    </children>
+                </VBox>
+            <Accordion fx:id="modulesPermissionsAccordion">
+              <panes>
+                <TitledPane fx:id="modulesTitledPane" text="Accessible Modules">
+                     <content>
+                            <VBox alignment="TOP_CENTER" spacing="5.0" styleClass="container-padded">
+                                <children>
+                                    <ListView fx:id="moduleAccessListView" prefHeight="248.0" prefWidth="300.0" VBox.vgrow="ALWAYS" />
+                                </children>
+                            </VBox>
+                     </content>
+                </TitledPane>
+                <TitledPane text="Permissions">
+                     <content>
+                        <VBox styleClass="container-padded">
+                           <children>
+                              <ListView fx:id="userPermissionListView" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            </items>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" />
+            </VBox.margin>
+        </SplitPane>
+        <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="695.0" spacing="30.0" styleClass="bg-lighten6">
+            <children>
+                <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteUser" prefWidth="106.0" styleClass="btn-danger-outline" text="Delete User" />
+                <Pane prefHeight="200.0" HBox.hgrow="ALWAYS" />
+                <Button fx:id="resetPasswordBtn" mnemonicParsing="false" onAction="#onResetPassword" styleClass="btn-info-outline" text="Reset Password" />
+                <Button mnemonicParsing="false" onAction="#onSaveUserInfo" styleClass="btn-success" text="Save Details" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

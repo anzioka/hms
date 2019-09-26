@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.ViewPurchaseReturnController">
+    <children>
+        <Label styleClass="modal-title" text="Purchase Returns"/>
+        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="590.0" spacing="5.0">
+            <children>
+                <Label styleClass="h6_5" text="Date"/>
+                <Label fx:id="date" text="Label">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="h6_5"/>
+                    </styleClass>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label styleClass="h6_5" text="Supplier"/>
+                <Label fx:id="supplier" text="Label">
+                    <styleClass>
+                        <String fx:value="color-unique"/>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="h6_5"/>
+                    </styleClass>
+                </Label>
+            </children>
+            <styleClass>
+                <String fx:value="container-padded"/>
+                <String fx:value="border-light-3"/>
+            </styleClass>
+        </HBox>
+        <TableView fx:id="tableView" prefHeight="335.0" prefWidth="590.0" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="drugName" prefWidth="75.0" text="Drug"/>
+                <TableColumn fx:id="buyingPrice" prefWidth="75.0" text="Buying Price"/>
+                <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity"/>
+                <TableColumn fx:id="totalPrice" prefWidth="75.0" text="Total Price"/>
+                <TableColumn fx:id="note" prefWidth="75.0" text="Note(s)"/>
+            </columns>
+        </TableView>
+    </children>
+</VBox>

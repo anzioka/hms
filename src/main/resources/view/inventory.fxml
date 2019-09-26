@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0"
+      prefWidth="957.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.controller.StockManagementController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" spacing="10.0" styleClass="bg-lighten3">
+            <children>
+                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/inventory.png"/>
+                    </image>
+                </ImageView>
+                <Label text="Stock Control">
+                    <styleClass>
+                        <String fx:value="h4"/>
+                        <String fx:value="color-accent"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                 VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab text="All Medicine">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="369.0" prefWidth="797.0" spacing="5.0" AnchorPane.bottomAnchor="0.0"
+                                      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                      AnchorPane.topAnchor="5.0">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="797.0" spacing="5.0"
+                                              styleClass="bg-lighten5">
+                                            <children>
+                                                <Button fx:id="addMedicineBtn" mnemonicParsing="false" onAction="#onNewMedicine"
+                                                        styleClass="btn-info" text="Add Medicine"/>
+                                                <Button fx:id="editMedicineBtn" mnemonicParsing="false" onAction="#onEditMedicine"
+                                                        styleClass="btn-info" text="Edit Medicine"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="797.0"
+                                              spacing="10.0" styleClass="bg-lighten6">
+                                            <children>
+                                                <ChoiceBox fx:id="choiceBox" prefHeight="27.0" prefWidth="130.0"/>
+                                                <TextField fx:id="quantityField" onAction="#onFilter" prefHeight="27.0"
+                                                           prefWidth="58.0"/>
+                                                <Button defaultButton="true" mnemonicParsing="false"
+                                                        onAction="#onFilter" text="Apply Filter"/>
+                                                <Pane prefHeight="38.0" prefWidth="2.0" HBox.hgrow="ALWAYS"/>
+                                                <Label text="Search Drugs">
+                                                    <styleClass>
+                                                        <String fx:value="color-dark-4"/>
+                                                        <String fx:value="fw-500"/>
+                                                    </styleClass>
+                                                </Label>
+                                                <TextField fx:id="searchFilter"/>
+                                            </children>
+                                        </HBox>
+                                        <Separator prefWidth="200.0"/>
+                                        <TableView fx:id="medicineTableView" prefHeight="214.0" prefWidth="797.0"
+                                                   VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TableColumn fx:id="drugCode" prefWidth="75.0" text="Code"/>
+                                                <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name"/>
+                                                <TableColumn fx:id="quantity" prefWidth="75.0" text="Quantity">
+                                                    <columns>
+                                                        <TableColumn fx:id="shopQuantity" prefWidth="75.0" text="Shop"/>
+                                                        <TableColumn fx:id="storeQuantity" prefWidth="75.0"
+                                                                     text="Store"/>
+                                                    </columns>
+                                                </TableColumn>
+                                                <TableColumn fx:id="reorderLevelCol" prefWidth="75.0"
+                                                             text="Reorder Level"/>
+                                                <TableColumn fx:id="buyingPriceCol" prefWidth="75.0"
+                                                             text="Buying Price"/>
+                                                <TableColumn fx:id="sellingPriceCol" prefWidth="75.0"
+                                                             text="Selling Price"/>
+                                            </columns>
+                                            <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                            </columnResizePolicy>
+                                        </TableView>
+                                        <Pagination fx:id="pagination" pageCount="1" prefHeight="54.0"
+                                                    prefWidth="947.0"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Purchases"/>
+                <Tab text="Purchase Orders"/>
+                <Tab text="Drug Transfers"/>
+                <Tab text="Purchase Returns"/>
+                <Tab text="Stock Take"/>
+                <Tab text="Suppliers"/>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

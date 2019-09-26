@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+
+<VBox fx:id="container" prefHeight="700.0" prefWidth="1100.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.OutpatientExaminationController">
+    <children>
+        <HBox minHeight="-Infinity" prefHeight="63.0" prefWidth="780.0" spacing="20.0" styleClass="bg-normal">
+            <children>
+                <GridPane layoutX="-37.0" layoutY="28.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="Patient No.">
+                            <styleClass>
+                                <String fx:value="color-white" />
+                                <String fx:value="fw-500" />
+                            </styleClass>
+                        </Label>
+                        <Label text="Sex" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="color-white" />
+                                <String fx:value="fw-500" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="patientId" opacity="0.9" styleClass="color-white" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="patientGender" opacity="0.9" styleClass="color-white" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="70.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+                <GridPane layoutX="220.0" layoutY="28.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="First Name">
+                            <styleClass>
+                                <String fx:value="color-white" />
+                                <String fx:value="fw-500" />
+                            </styleClass>
+                        </Label>
+                        <Label text="Surname" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="color-white" />
+                                <String fx:value="fw-500" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="firstName" opacity="0.9" styleClass="color-white" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="surname" opacity="0.9" styleClass="color-white" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="75.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+                <GridPane layoutX="452.0" layoutY="35.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label text="DoB">
+                            <styleClass>
+                                <String fx:value="color-white" />
+                                <String fx:value="fw-500" />
+                            </styleClass>
+                        </Label>
+                        <Label text="Age" GridPane.rowIndex="1">
+                            <styleClass>
+                                <String fx:value="color-white" />
+                                <String fx:value="fw-500" />
+                            </styleClass>
+                        </Label>
+                        <Label fx:id="dateOfBirth" opacity="0.9" styleClass="color-white" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="age" opacity="0.9" styleClass="color-white" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="40.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0" />
+        <FlowPane alignment="CENTER" hgap="10.0" prefWidth="992.0" styleClass="container-padded" vgap="10.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onViewHistory" styleClass="btn-info-outline" text="Previous Visits" />
+            <Button mnemonicParsing="false" onAction="#onEditAllergies" styleClass="btn-info-outline" text="Allergies" />
+                <Button mnemonicParsing="false" onAction="#onAdmit" styleClass="btn-info-outline" text="Admit" />
+                <Button mnemonicParsing="false" onAction="#onViewVitals" styleClass="btn-info-outline" text="View Vitals" />
+                <Button mnemonicParsing="false" onAction="#onProcedure" prefWidth="96.0" styleClass="btn-info-outline" text="Procedure" />
+            <Button mnemonicParsing="false" onAction="#onAddDiagnosis" styleClass="btn-info-outline" text="Diagnosis" />
+                <Button mnemonicParsing="false" onAction="#onLabRequest" styleClass="btn-info-outline" text="Lab Requests" />
+            <Button onAction="#onRadiologyRequest" mnemonicParsing="false" styleClass="btn-info-outline"
+                    text="Radiology" />
+                <Button mnemonicParsing="false" onAction="#onMedication" prefWidth="96.0" styleClass="btn-info-outline" text="Medication" />
+                <Button mnemonicParsing="false" onAction="#onDischarge" prefWidth="96.0" styleClass="btn-info-outline" text="Discharge" />
+            <Button mnemonicParsing="false" onAction="#onFollowUpVisit" styleClass="btn-info-outline" text="Follow Up" />
+                <Button mnemonicParsing="false" onAction="#onSave" prefWidth="96.0" styleClass="btn-success" text="Save Notes" />
+            </children>
+        </FlowPane>
+        <Separator prefWidth="200.0" />
+        <ScrollPane fitToWidth="true" prefHeight="845.0" prefViewportHeight="897.0" prefViewportWidth="990.0" prefWidth="992.0">
+            <content>
+                <AnchorPane>
+                    <children>
+                        <AnchorPane prefHeight="100.0" prefWidth="890.0" styleClass="bg-lighten5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <Label layoutX="74.0" layoutY="3.0" styleClass="heading2-blue" text="Chief Complaints" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                <TextArea fx:id="chiefComplains" layoutX="30.0" layoutY="27.0" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 14px;" text="&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="105.0" prefHeight="278.0" prefWidth="890.0" styleClass="bg-lighten5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <TextArea fx:id="medicalHistory" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" style="-fx-font-size: 14px;" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="24.0" />
+                                <Label layoutX="79.0" layoutY="3.0" styleClass="heading2-blue" text="Medical History" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                        <HBox layoutY="388.0" prefHeight="258.0" prefWidth="890.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <AnchorPane styleClass="bg-lighten5" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <TextArea fx:id="physicalExam" layoutX="-16.0" layoutY="34.0" prefHeight="200.0" style="-fx-font-size: 14px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
+                                        <Label layoutX="64.0" layoutY="10.0" prefHeight="22.0" prefWidth="214.0" styleClass="heading2-blue" text="Physical Examination" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane styleClass="bg-lighten5" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <TextArea fx:id="investigation" layoutX="15.0" layoutY="34.0" prefHeight="252.0" style="-fx-font-size: 14px;" text="&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
+                                        <Label layoutX="64.0" layoutY="10.0" prefHeight="22.0" prefWidth="164.0" styleClass="heading2-blue" text="Investigation" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </HBox>
+                        <HBox layoutY="651.0" prefHeight="193.0" prefWidth="990.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <AnchorPane prefHeight="180.0" prefWidth="990.0" styleClass="bg-lighten5" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Label layoutX="74.0" layoutY="3.0" styleClass="heading2-blue" text="Treatment Notes" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                        <TextArea fx:id="treatment" layoutX="15.0" layoutY="29.0" style="-fx-font-size: 14px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
+</VBox>

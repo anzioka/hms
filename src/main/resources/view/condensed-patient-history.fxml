@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="700.0" spacing="5.0" styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controller.CondensedHistoryController">
+   <children>
+      <Label fx:id="title" styleClass="h6" text="Alfonce's History" />
+      <Separator prefWidth="200.0" />
+      <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="590.0" spacing="5.0">
+         <children>
+            <ChoiceBox fx:id="patientCategoryChoiceBox" prefWidth="150.0" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label styleClass="fw-500" text="From" />
+            <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy" />
+            <Label layoutX="373.0" layoutY="15.0" styleClass="fw-500" text="To" />
+            <DatePicker fx:id="endDate" layoutX="373.0" layoutY="10.0" prefWidth="153.0" promptText="dd-mm-yyyy" />
+            <Button onAction="#onSearchRecords" mnemonicParsing="false" styleClass="btn-default" text="Search" />
+         </children>
+      </HBox>
+      <TableView fx:id="visitsTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Visit">
+               <columns>
+                  <TableColumn fx:id="visitDate"   prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="visitTime" prefWidth="75.0" text="Time" />
+               </columns>
+            </TableColumn>
+          <TableColumn fx:id="outDoctor" prefWidth="75.0" text="Doctor" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="admissionsTableView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Admitted">
+               <columns>
+                  <TableColumn fx:id="admissionDate" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="admissionTime" prefWidth="75.0" text="Time" />
+               </columns>
+            </TableColumn>
+          <TableColumn prefWidth="75.0" text="Discharged">
+               <columns>
+                  <TableColumn fx:id="dischargeDate" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="dischargeTime" prefWidth="75.0" text="Time" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="inDoctor" prefWidth="75.0" text="Doctor" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</VBox>

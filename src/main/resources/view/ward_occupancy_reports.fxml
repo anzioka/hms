@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="450.0" prefWidth="739.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.WardOccupancyReportsController">
+    <children>
+        <VBox alignment="CENTER" minHeight="-Infinity" prefHeight="90.0" prefWidth="590.0" styleClass="border-light-3">
+            <children>
+                <HBox alignment="CENTER" prefHeight="46.0" prefWidth="588.0" spacing="5.0">
+                    <children>
+                        <Label text="Start Date"/>
+                        <DatePicker fx:id="startDate" prefWidth="153.0" promptText="dd-mm-yyyy"/>
+                        <Label layoutX="208.0" layoutY="25.0" text="End Date">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="endDate" layoutX="228.0" layoutY="20.0" prefWidth="153.0"
+                                    promptText="dd-mm-yyyy"/>
+                        <Label text="Ward">
+                            <HBox.margin>
+                                <Insets left="10.0"/>
+                            </HBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="wardChoiceBox" minWidth="150.0"/>
+                    </children>
+                </HBox>
+                <Button mnemonicParsing="false" onAction="#onGenerateReport" styleClass="btn-info-outline"
+                        text="Generate Report"/>
+            </children>
+        </VBox>
+        <HBox alignment="CENTER" fillHeight="false" prefHeight="49.0" prefWidth="729.0" spacing="10.0">
+            <children>
+                <HBox alignment="CENTER" layoutX="74.0" layoutY="19.0">
+                    <children>
+                        <Label text="Average Length of Stay : ">
+
+                        </Label>
+                        <Label fx:id="averageStay" text="Label">
+                            <styleClass>
+                                <String fx:value="color-white"/>
+                                <String fx:value="fw-500"/>
+                                <String fx:value="h7"/>
+                            </styleClass>
+                            <tooltip>
+                                <Tooltip text="The average number of days that a patient stays in the hospital"/>
+                            </tooltip>
+                        </Label>
+                    </children>
+                    <styleClass>
+                        <String fx:value="bg-teal"/>
+                        <String fx:value="container-padded"/>
+                    </styleClass>
+                </HBox>
+            </children>
+        </HBox>
+        <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox alignment="TOP_CENTER" fillWidth="false" VBox.vgrow="ALWAYS">
+                    <children>
+                        <LineChart fx:id="lineChart">
+                            <xAxis>
+                                <CategoryAxis  label="Date" side="BOTTOM"/>
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis  label="Admissions" side="LEFT"/>
+                            </yAxis>
+                        </LineChart>
+                    </children>
+                </VBox>
+                <PieChart fx:id="pieChart"/>
+            </children>
+        </HBox>
+        <Separator prefWidth="200.0"/>
+    </children>
+</VBox>

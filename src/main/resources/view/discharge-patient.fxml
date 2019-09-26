@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="317.0" prefWidth="474.0" spacing="5.0" styleClass="scene"
+      stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.DischargePatientController">
+    <children>
+        <Label text="Discharge Patient">
+            <styleClass>
+                <String fx:value="h6"/>
+                <String fx:value="color-unique"/>
+            </styleClass>
+        </Label>
+        <Separator prefWidth="200.0"/>
+        <HBox alignment="CENTER" prefHeight="94.0" prefWidth="464.0">
+            <children>
+                <Label text="Date: ">
+                    <styleClass>
+                        <String fx:value="fw-500"/>
+                        <String fx:value="color-dark-2"/>
+                    </styleClass>
+                </Label>
+                <DatePicker fx:id="datePicker" promptText="dd-mm-yyyy">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </DatePicker>
+                <Label/>
+                <ChoiceBox fx:id="hourPicker" prefWidth="60.0"/>
+                <ChoiceBox fx:id="minutePicker" layoutX="346.0" layoutY="22.0" prefWidth="60.0"/>
+                <ChoiceBox fx:id="timePeriodChoiceBox" layoutX="376.0" layoutY="22.0" prefWidth="60.0"/>
+            </children>
+        </HBox>
+        <Label fx:id="description" alignment="CENTER" contentDisplay="CENTER"
+               text="Click on the button below to discharge" wrapText="true"/>
+        <Pane VBox.vgrow="ALWAYS"/>
+        <Button mnemonicParsing="false" onAction="#onDischarge" prefHeight="35.0" prefWidth="509.0"
+                styleClass="btn-success" text="Discharge Patient"/>
+    </children>
+</VBox>

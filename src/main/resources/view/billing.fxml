@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:id="container" prefHeight="531.0" prefWidth="1044.0" spacing="5.0"
+      styleClass="scene" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/8"
+      fx:controller="main.java.controller.BillingController">
+    <children>
+        <HBox alignment="CENTER" minHeight="-Infinity" prefHeight="60.0" prefWidth="200.0" spacing="10.0"
+              styleClass="bg-lighten3" VBox.vgrow="NEVER">
+            <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/billing.png"/>
+                    </image>
+                </ImageView>
+                <Label text="Billing">
+                    <styleClass>
+                        <String fx:value="color-accent"/>
+                        <String fx:value="h4"/>
+                    </styleClass>
+                </Label>
+            </children>
+        </HBox>
+        <HBox fx:id="buttonPanel" alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="45.0"
+              prefWidth="1034.0" spacing="20.0" styleClass="border-light-3">
+            <children>
+                <Button id="uncollected-cash-payments" mnemonicParsing="false" text="Receive Cash Payments"/>
+                <Button id="invoices" mnemonicParsing="false" text="Invoices"/>
+                <Button id="receipts" mnemonicParsing="false" text="Receipts"/>
+                <Button id="insurance_payments" mnemonicParsing="false" text="Insurance Payments"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>
